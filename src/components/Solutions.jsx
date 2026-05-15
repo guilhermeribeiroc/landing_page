@@ -95,12 +95,17 @@ export default function Solutions() {
           viewport={{ once: true, margin: '-60px' }}
         >
           {cards.map((c, i) => (
-            <motion.div className="solution-card" key={i} variants={cardVariants}>
+            <motion.div
+              className="solution-card"
+              key={i}
+              variants={cardVariants}
+              onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               <div className="card-icon">{c.icon}</div>
               <h3>{c.title}</h3>
               <p>{c.desc}</p>
               <div className="card-arrow">
-                Saiba mais
+                Fale conosco
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M5 12h14M12 5l7 7-7 7"/>
                 </svg>
