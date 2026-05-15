@@ -125,7 +125,7 @@ const projects = [
     desc: 'Sistema web moderno desenvolvido para facilitar o dia a dia de profissionais da saúde. Oferece controle completo de agendamentos, prontuário eletrônico personalizado e gestão financeira de forma intuitiva.',
     status: 'Em operação',
     year: '2026',
-    link: 'https://myclinica.online',
+    link: 'https://site.myclinica.online',
     features: [
       'Dashboard intuitivo com resumo financeiro e de atendimentos',
       'Prontuário eletrônico com anamnese e histórico',
