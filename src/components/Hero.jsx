@@ -11,40 +11,76 @@ const fadeUp = {
 export default function Hero() {
   return (
     <section className="hero" id="hero">
-      <div className="grid-bg" />
       <div className="container">
-        <motion.div className="hero-content" initial="hidden" animate="visible">
-          <motion.div className="hero-badge" variants={fadeUp} custom={0}>
-            <span className="dot" />
-            Inovação em sistemas de gestão
+        <div className="hero-layout">
+          <motion.div className="hero-copy" initial="hidden" animate="visible">
+            <motion.h1 variants={fadeUp} custom={0}>
+              Menos trabalho manual. <strong>Mais empresa acontecendo.</strong>
+            </motion.h1>
+            <motion.p className="hero-lead" variants={fadeUp} custom={1}>
+              Transformamos planilhas, tarefas repetitivas e sistemas desconectados em processos automáticos, painéis de controle e uma operação mais eficiente.
+            </motion.p>
+            <motion.div className="hero-actions" variants={fadeUp} custom={2}>
+              <a href="#diagnostico" className="button">
+                Fazer diagnóstico gratuito
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+              </a>
+              <a href="#como-funciona" className="text-link">
+                Como funciona a automação
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6" /></svg>
+              </a>
+            </motion.div>
+            <motion.p className="hero-note" variants={fadeUp} custom={3}>
+              5 perguntas · cerca de 2 minutos · sem compromisso
+            </motion.p>
           </motion.div>
 
-          <motion.h1 variants={fadeUp} custom={1}>
-            Tecnologia que{' '}
-            <span className="highlight">otimiza</span> e{' '}
-            <span className="highlight">automatiza</span> sua empresa.
-          </motion.h1>
-
-          <motion.p variants={fadeUp} custom={2}>
-            Desenvolvemos sistemas de gestão inteligentes e sob medida. 
-            Transformamos processos complexos em soluções digitais que 
-            aceleram seu negócio e geram resultados reais.
-          </motion.p>
-
-          <motion.div className="hero-buttons" variants={fadeUp} custom={3}>
-            <a href="https://wa.me/558888557247?text=Ol%C3%A1!%20Vi%20o%20site%20da%20OtimizaA%C3%8D%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20suas%20solu%C3%A7%C3%B5es%20tecnol%C3%B3gicas." className="btn-cta" target="_blank" rel="noopener noreferrer">
-              Solicitar Orçamento
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </a>
-            <a href="#solucoes" className="btn-outline">
-              Conheça nossas soluções
-            </a>
+          <motion.div
+            className="operation-map"
+            initial={{ opacity: 0, clipPath: 'inset(12% 0 0 0)' }}
+            animate={{ opacity: 1, clipPath: 'inset(0% 0 0 0)' }}
+            transition={{ duration: 0.9, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            aria-label="Demonstração de um processo manual transformado em fluxo automático"
+          >
+            <div className="map-topline">
+              <span>Fluxo operacional</span>
+              <span className="live-status"><i /> Automação ativa</span>
+            </div>
+            <div className="map-stage map-stage--input">
+              <span className="stage-label">ENTRADAS</span>
+              <div className="input-stream">
+                <span>Formulário recebido</span>
+                <span>Cadastro atualizado</span>
+                <span>Prazo alterado</span>
+              </div>
+            </div>
+            <div className="automation-core">
+              <div className="core-ring"><span>AI</span></div>
+              <div>
+                <strong>Otimiza Flow</strong>
+                <small>validando · organizando · direcionando</small>
+              </div>
+            </div>
+            <div className="map-stage map-stage--output">
+              <span className="stage-label">AÇÕES AUTOMÁTICAS</span>
+              <ul>
+                <li><span>01</span> Responsável notificado <b>feito</b></li>
+                <li><span>02</span> Tarefa criada <b>feito</b></li>
+                <li><span>03</span> Dashboard atualizado <b>feito</b></li>
+              </ul>
+            </div>
+            <div className="map-footer">
+              <span>Sem copiar dados</span><span>Sem cobrar manualmente</span><span>Com histórico</span>
+            </div>
           </motion.div>
+        </div>
 
-
-        </motion.div>
+        <div className="pain-strip" aria-label="Problemas que a OtimizaAI resolve">
+          <span>Planilhas duplicadas</span>
+          <span>Relatórios demorados</span>
+          <span>Cadastros repetidos</span>
+          <span>Equipe presa no operacional</span>
+        </div>
       </div>
     </section>
   )

@@ -12,11 +12,10 @@ export default function Header() {
   }, [])
 
   const links = [
-    { label: 'Início', href: '#hero' },
-    { label: 'Soluções', href: '#solucoes' },
-    { label: 'Projetos', href: '#projetos' },
-    { label: 'Sobre', href: '#sobre' },
-    { label: 'Contato', href: '#contato' },
+    { label: 'Como funciona', href: '#como-funciona' },
+    { label: 'Benefícios', href: '#beneficios' },
+    { label: 'Resultados', href: '#resultados' },
+    { label: 'FAQ', href: '#faq' },
   ]
 
   return (
@@ -47,20 +46,17 @@ export default function Header() {
               </motion.a>
             ))}
             <motion.a
-              href="https://wa.me/558888557247?text=Ol%C3%A1!%20Vi%20o%20site%20da%20OtimizaA%C3%8D%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20suas%20solu%C3%A7%C3%B5es%20tecnol%C3%B3gicas."
-              className="btn-cta"
+              href="#diagnostico"
+              className="button button--small"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.7 }}
-              target="_blank"
-              rel="noopener noreferrer"
             >
-              Fale Conosco
-              <span>→</span>
+              Fazer diagnóstico
             </motion.a>
           </nav>
 
-          <button className="menu-toggle" onClick={() => setMobileOpen(true)} aria-label="Abrir menu">
+          <button className="menu-toggle" onClick={() => setMobileOpen(true)} aria-label="Abrir menu" aria-expanded={mobileOpen}>
             <span /><span /><span />
           </button>
         </div>
@@ -74,7 +70,9 @@ export default function Header() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <button className="mobile-close" onClick={() => setMobileOpen(false)}>✕</button>
+            <button className="mobile-close" onClick={() => setMobileOpen(false)} aria-label="Fechar menu">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" /></svg>
+            </button>
             {links.map((l, i) => (
               <motion.a
                 key={l.href}
@@ -87,8 +85,8 @@ export default function Header() {
                 {l.label}
               </motion.a>
             ))}
-            <a href="https://wa.me/558888557247?text=Ol%C3%A1!%20Vi%20o%20site%20da%20OtimizaA%C3%8D%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20suas%20solu%C3%A7%C3%B5es%20tecnol%C3%B3gicas." className="btn-cta" target="_blank" rel="noopener noreferrer">
-              Fale Conosco →
+            <a href="#diagnostico" className="button" onClick={() => setMobileOpen(false)}>
+              Fazer diagnóstico
             </a>
           </motion.div>
         )}

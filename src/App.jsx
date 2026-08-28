@@ -1,10 +1,9 @@
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
 import Header from './components/Header'
 import Hero from './components/Hero'
-import Solutions from './components/Solutions'
-import Projects from './components/Projects'
-import About from './components/About'
+import HowItWorks from './components/HowItWorks'
+import ValueSection from './components/ValueSection'
+import DiagnosticQuiz from './components/DiagnosticQuiz'
+import FAQ from './components/FAQ'
 import CtaSection from './components/CtaSection'
 import Footer from './components/Footer'
 
@@ -14,9 +13,10 @@ function App() {
       <Header />
       <main>
         <Hero />
-        <Solutions />
-        <Projects />
-        <About />
+        <HowItWorks />
+        <ValueSection />
+        <DiagnosticQuiz />
+        <FAQ />
         <CtaSection />
       </main>
       <Footer />
