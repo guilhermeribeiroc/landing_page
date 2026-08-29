@@ -5,7 +5,7 @@ export default function Footer() {
         <div className="footer-grid">
           <div className="footer-brand">
             <a href="#hero" className="logo">
-              <div className="logo-icon"><img src="/logo-clean.png" alt="OtimizaAI" /></div>
+              <div className="logo-icon"><img src={`${import.meta.env.BASE_URL}logo-clean.png`} alt="OtimizaAI" /></div>
               <div className="logo-text">Otimiza<span>AI</span></div>
             </a>
             <p>

@@ -113,7 +113,7 @@ export default function ValueSection() {
           </div>
           <div className="proof-project proof-project--primary">
             <div className="proof-image">
-              <img src="/myclinica_dashboard.png" alt="Dashboard completo do sistema MyClínica com indicadores financeiros e de atendimentos" />
+              <img src={`${import.meta.env.BASE_URL}myclinica_dashboard.png`} alt="Dashboard completo do sistema MyClínica com indicadores financeiros e de atendimentos" />
             </div>
             <div className="proof-project-body">
               <div className="proof-project-copy">
@@ -135,7 +135,7 @@ export default function ValueSection() {
           </div>
           <div className="proof-project proof-project--secondary">
             <div className="proof-image">
-              <img src="/gestprotech_estatisticas.jpg" alt="Painel completo do GestProTech com desempenho histórico, indicadores e faturamento" />
+              <img src={`${import.meta.env.BASE_URL}gestprotech_estatisticas.jpg`} alt="Painel completo do GestProTech com desempenho histórico, indicadores e faturamento" />
             </div>
             <div className="proof-project-body">
               <div className="proof-project-copy">
