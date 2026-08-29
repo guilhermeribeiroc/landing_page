@@ -112,9 +112,19 @@ export default function ValueSection() {
             </a>
           </div>
           <div className="proof-project proof-project--primary">
-            <div className="proof-image">
+            <a
+              className="proof-image"
+              href={`${import.meta.env.BASE_URL}myclinica_dashboard.png`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Abrir captura completa do MyClínica"
+            >
               <img src={`${import.meta.env.BASE_URL}myclinica_dashboard.png`} alt="Dashboard completo do sistema MyClínica com indicadores financeiros e de atendimentos" />
-            </div>
+              <span>
+                Abrir captura completa
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9" /></svg>
+              </span>
+            </a>
             <div className="proof-project-body">
               <div className="proof-project-copy">
                 <h3>MyClínica</h3>
@@ -134,9 +144,19 @@ export default function ValueSection() {
             </div>
           </div>
           <div className="proof-project proof-project--secondary">
-            <div className="proof-image">
+            <a
+              className="proof-image"
+              href={`${import.meta.env.BASE_URL}gestprotech_estatisticas.jpg`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Abrir captura completa do GestProTech"
+            >
               <img src={`${import.meta.env.BASE_URL}gestprotech_estatisticas.jpg`} alt="Painel completo do GestProTech com desempenho histórico, indicadores e faturamento" />
-            </div>
+              <span>
+                Abrir captura completa
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9" /></svg>
+              </span>
+            </a>
             <div className="proof-project-body">
               <div className="proof-project-copy">
                 <h3>GestProTech</h3>

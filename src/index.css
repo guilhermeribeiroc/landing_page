@@ -168,8 +168,12 @@ ul { list-style: none; }
 .proof-copy p { margin: 24px 0 28px; color: var(--text-muted); max-width: 50ch; }
 .proof-project { grid-column: 5 / 13; border-radius: var(--radius); overflow: hidden; background: #102b35; border: 1px solid var(--line); }
 .proof-project--secondary { margin-top: 20px; }
-.proof-image { padding: 12px; background: #081a22; border-bottom: 1px solid var(--line); }
-.proof-image img { width: 100%; height: auto; object-fit: contain; border-radius: 8px; background: #eef3f5; }
+.proof-image { display: grid; gap: 10px; padding: 18px; background: #081a22; border-bottom: 1px solid var(--line); color: #b8d0ca; }
+.proof-image img { display: block; width: auto; max-width: 100%; height: auto; max-height: none; margin: 0 auto; object-fit: contain; object-position: center; border-radius: 8px; background: #eef3f5; }
+.proof-image span { display: inline-flex; align-items: center; justify-self: end; gap: 6px; font-size: 0.66rem; font-weight: 750; }
+.proof-image svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.proof-image:hover { color: var(--cyan-bright); }
+.proof-image:focus-visible { outline-offset: -4px; }
 .proof-project-body { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(190px, 0.7fr); gap: 28px 36px; padding: 30px; }
 .proof-project-copy h3 { font-family: var(--display); font-size: 1.75rem; line-height: 1; letter-spacing: -0.025em; }
 .proof-project-copy > p { margin-top: 13px; color: var(--text-muted); font-size: 0.88rem; line-height: 1.72; }
@@ -350,7 +354,7 @@ ul { list-style: none; }
   .case-state { padding: 18px; border-radius: 10px; background: rgba(255,255,255,0.025); }
   .case-state--after { background: rgba(39,221,197,0.06); }
   .comparison-head span { font-size: 1.25rem; }
-  .proof-image { padding: 7px; }
+  .proof-image { gap: 8px; padding: 11px; }
   .proof-project-body { grid-template-columns: 1fr; gap: 24px; padding: 24px 20px; }
   .proof-project-copy h3 { font-size: 1.55rem; }
   .proof-note { margin-top: -6px; }
