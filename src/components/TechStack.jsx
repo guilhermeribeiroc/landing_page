@@ -1,5 +1,5 @@
 const technologies = [
-  { name: 'Gemini', logo: '/tech/gemini-mark.svg', variant: 'gemini' },
+  { name: 'Gemini', logo: '/tech/gemini-wordmark.png', variant: 'gemini', wordmark: true },
   { name: 'ChatGPT', logo: '/tech/chatgpt-mark.svg', variant: 'chatgpt' },
   { name: 'Meta', logo: '/tech/meta-mark.svg', variant: 'meta' },
   { name: 'n8n', logo: '/tech/n8n-mark.svg', variant: 'n8n' },
@@ -7,6 +7,7 @@ const technologies = [
   { name: 'PostgreSQL', logo: '/tech/postgresql-mark.svg', variant: 'postgresql' },
   { name: 'Docker', logo: '/tech/docker-mark.svg', variant: 'docker' },
   { name: 'Antigravity', logo: '/tech/antigravity-mark.png', variant: 'antigravity' },
+  { name: 'Asaas', logo: '/tech/asaas-wordmark.svg', variant: 'asaas', wordmark: true },
   { name: 'Claude', logo: '/tech/claude-wordmark.png', variant: 'claude', wordmark: true },
 ]
 
