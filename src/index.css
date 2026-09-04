@@ -433,6 +433,7 @@ ul { list-style: none; }
 .proof-copy { max-width: 740px; padding: 0; position: static; margin-bottom: 58px; }
 .proof-copy h2 { margin-top: 18px; font-size: clamp(3rem, 5.3vw, 5.35rem); }
 .system-cases { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.proof-portfolio-note { max-width: 68ch; margin: 30px auto 0; color: #91b1b2; font-size: .8rem; line-height: 1.65; text-align: center; }
 .system-case { min-height: 535px; display: grid; grid-template-rows: auto 1fr; overflow: hidden; border: 1px solid rgba(163, 219, 216, .16); border-radius: 20px; background: linear-gradient(145deg, rgba(14, 37, 47, .95), rgba(6, 14, 21, .98)); box-shadow: inset 0 1px rgba(255, 255, 255, .04), 0 26px 60px rgba(0, 0, 0, .22); }
 .system-case-copy { padding: 34px 34px 16px; }
 .system-case-copy > p { color: #8ac7c3; font-size: .68rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }

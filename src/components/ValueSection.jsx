@@ -56,7 +56,7 @@ const comparison = {
 const systemCases = [
   {
     name: 'MyClínica',
-    category: 'Saúde & atendimento',
+    category: 'SaaS público · Saúde & atendimento',
     description: 'Agenda, prontuário, financeiro e relacionamento em uma operação clínica mais simples.',
     href: 'https://site.myclinica.online',
     features: ['Agenda inteligente', 'Prontuário digital', 'Financeiro integrado'],
@@ -64,7 +64,7 @@ const systemCases = [
   },
   {
     name: 'GestProTech',
-    category: 'Gestão jurídica',
+    category: 'SaaS público · Gestão jurídica',
     description: 'Processos, prazos, clientes e resultados organizados para escritórios que precisam de visão.',
     href: 'https://gestprotech.com.br',
     features: ['Processos e prazos', 'Financeiro centralizado', 'Acessos por perfil'],
@@ -140,9 +140,9 @@ export default function ValueSection() {
       <section className="proof" id="resultados">
         <div className="container">
           <div className="proof-copy">
-            <p className="section-kicker">Sistemas em operação</p>
-            <h2>Sistemas que organizam toda a operação.</h2>
-            <p>Da agenda de uma clínica aos prazos de um escritório jurídico: cada plataforma é desenhada para reunir a rotina, os dados e as decisões em um só lugar.</p>
+            <p className="section-kicker">Produtos SaaS da Otimiza</p>
+            <h2>Dois sistemas públicos dentro de um portfólio maior.</h2>
+            <p>MyClínica e GestProTech estão abertos ao público e representam duas das nossas principais plataformas. Além deles, criamos outros sistemas e soluções sob medida para operações específicas.</p>
             <a href="#diagnostico" className="text-link">
               Quero um sistema assim
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
@@ -165,6 +165,7 @@ export default function ValueSection() {
               </article>
             ))}
           </div>
+          <p className="proof-portfolio-note">Também desenvolvemos plataformas internas, produtos sob medida e novas soluções para diferentes operações.</p>
         </div>
       </section>
     </>
