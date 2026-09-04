@@ -497,7 +497,6 @@ ul { list-style: none; }
 /* Cada grupo é idêntico: ao completar metade da faixa, o próximo inicia sem salto. */
 .tech-marquee-track { display: flex; width: max-content; will-change: transform; animation: techScrollSeamless 28s linear infinite; }
 .tech-marquee .tech-marquee-group { display: flex; flex: 0 0 auto; align-items: center; width: auto; gap: 46px; margin: 0; padding: 0 46px 0 0; animation: none; }
-.tech-marquee:hover .tech-marquee-track { animation-play-state: paused; }
 @keyframes techScrollSeamless { to { transform: translateX(-25%); } }
 .tech-item--claude { min-width: 176px; }
 .tech-item--claude .tech-wordmark { width: 150px; height: 42px; object-fit: contain; }
