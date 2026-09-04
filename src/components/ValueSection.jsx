@@ -1,27 +1,31 @@
-const useCases = [
+const solutionCards = [
   {
     icon: 'inbox',
-    title: 'Leads e atendimento',
-    before: 'Copiar dados, avisar o vendedor e criar o acompanhamento.',
-    after: 'O lead entra, é classificado e chega ao responsável com a próxima ação criada.',
+    eyebrow: '01 · Atrair',
+    title: 'Landing pages que fazem sua oferta ser escolhida.',
+    description: 'Transformamos uma boa solução em uma página clara, desejável e pronta para gerar conversas com as pessoas certas.',
+    outcome: 'Para parar de perder oportunidades antes mesmo do primeiro contato.',
+    action: 'Ver caminhos de conversão',
+    visual: 'landing',
+    featured: true,
   },
   {
     icon: 'database',
-    title: 'Cadastros e integrações',
-    before: 'Digitar a mesma informação em planilhas e sistemas diferentes.',
-    after: 'O dado é registrado uma vez e sincronizado com as ferramentas necessárias.',
+    eyebrow: '02 · Organizar',
+    title: 'Sistemas que colocam a operação no mesmo lugar.',
+    description: 'Desenhamos plataformas para reunir processos, dados e decisões sem obrigar a equipe a trabalhar em torno das ferramentas.',
+    outcome: 'Para quem já cresceu mais rápido do que a rotina consegue acompanhar.',
+    action: 'Conhecer nossos sistemas',
+    visual: 'system',
   },
   {
     icon: 'chart',
-    title: 'Relatórios gerenciais',
-    before: 'Reunir dados de várias fontes para montar o relatório do período.',
-    after: 'Indicadores são atualizados e apresentados em um painel centralizado.',
-  },
-  {
-    icon: 'bell',
-    title: 'Alertas e tarefas',
-    before: 'Depender da memória para cobrar prazos, pendências e retornos.',
-    after: 'Cada evento aciona a pessoa certa e registra o andamento do processo.',
+    eyebrow: '03 · Acelerar',
+    title: 'Automações que fazem o trabalho avançar sozinho.',
+    description: 'Conectamos as ferramentas que você já usa para que informação, tarefas e alertas cheguem ao lugar certo na hora certa.',
+    outcome: 'Para reduzir retrabalho sem perder contexto, controle ou histórico.',
+    action: 'Mapear uma automação',
+    visual: 'automation',
   },
 ]
 
@@ -34,6 +38,18 @@ function UseCaseIcon({ type }) {
   }
 
   return <svg viewBox="0 0 24 24" aria-hidden="true">{paths[type]}</svg>
+}
+
+function SolutionVisual({ type }) {
+  if (type === 'landing') {
+    return <div className="solution-preview solution-preview--landing" aria-hidden="true"><div className="preview-browser"><i /><i /><i /><span>suamarca.com</span></div><div className="preview-landing-copy"><small>UMA PROPOSTA QUE SE ENTENDE</small><b>Seu próximo cliente começa aqui.</b><em>Falar com especialista <span>→</span></em></div></div>
+  }
+
+  if (type === 'system') {
+    return <div className="solution-preview solution-preview--system" aria-hidden="true"><div className="preview-browser"><i /><i /><i /><span>painel.suaempresa</span></div><div className="preview-dashboard"><aside><i /><i /><i /></aside><div><header><span /><b>Visão da operação</b><em>Hoje</em></header><section><span><small>Pendências</small><b>Organizadas</b></span><i /><i /><i /></section><footer><b>Processos</b><span>Atualizado agora</span></footer></div></div></div>
+  }
+
+  return <div className="solution-preview solution-preview--automation" aria-hidden="true"><div className="automation-path"><div><i className="dot dot--source" /><span>Novo contato</span></div><b>↓</b><div><i className="dot dot--process" /><span>Qualificar lead</span></div><b>↓</b><div><i className="dot dot--result" /><span>Equipe avisada</span></div></div><p>O processo continua — mesmo quando você não está olhando.</p></div>
 }
 
 const comparison = {
@@ -96,18 +112,24 @@ export default function ValueSection() {
     <>
       <section className="use-cases" id="solucoes">
         <div className="container">
-          <div className="section-heading">
-            <h2>Veja o que muda quando o processo começa a trabalhar sozinho.</h2>
-            <p>Exemplos práticos de rotinas que podem deixar de consumir tempo todos os dias.</p>
+          <div className="solutions-heading">
+            <p className="section-kicker">O ponto de partida do seu próximo avanço</p>
+            <h2>Onde sua empresa precisa destravar primeiro?</h2>
+            <p>Da primeira visita à operação rodando: criamos o ponto que falta para sua empresa avançar com mais clareza, presença e ritmo.</p>
           </div>
 
-          <div className="use-case-list">
-            {useCases.map((item) => (
-              <article className="use-case-row" key={item.title}>
-                <div className="case-title"><UseCaseIcon type={item.icon} /><h3>{item.title}</h3></div>
-                <div className="case-state case-state--before"><small>HOJE</small><p>{item.before}</p></div>
-                <div className="case-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" /></svg></div>
-                <div className="case-state case-state--after"><small>AUTOMATIZADO</small><p>{item.after}</p></div>
+          <div className="solution-journey" aria-label="Jornada das soluções da Otimiza AI">
+            <span>Atrair clientes</span><i>→</i><span>Organizar a operação</span><i>→</i><span>Automatizar o crescimento</span>
+          </div>
+
+          <div className="solution-card-grid">
+            {solutionCards.map((item) => (
+              <article className={`solution-choice ${item.featured ? 'solution-choice--featured' : ''}`} key={item.title}>
+                <div className="solution-choice-top"><span>{item.eyebrow}</span><UseCaseIcon type={item.icon} /></div>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+                <SolutionVisual type={item.visual} />
+                <div className="solution-choice-bottom"><small>{item.outcome}</small><a href="#diagnostico">{item.action} <span aria-hidden="true">→</span></a></div>
               </article>
             ))}
           </div>
