@@ -29,7 +29,7 @@ export default function Header() {
       >
         <div className="container header-inner">
           <a href="#hero" className="logo">
-            <div className="logo-icon logo-icon--png"><img src={`${import.meta.env.BASE_URL}otimiza-logo.png`} alt="OtimizaAI" /></div>
+            <div className="logo-icon logo-icon--png"><img src={`${import.meta.env.BASE_URL}otimiza-mark-black.png`} alt="OtimizaAI" /></div>
             <div className="logo-text">Otimiza<span>AI</span></div>
           </a>
 
