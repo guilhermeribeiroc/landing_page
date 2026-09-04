@@ -4,7 +4,7 @@ const technologies = [
   { name: 'Meta', logo: '/tech/meta-mark.svg', variant: 'meta' },
   { name: 'n8n', logo: '/tech/n8n-mark.svg', variant: 'n8n' },
   { name: 'Supabase', logo: '/tech/supabase-mark.svg', variant: 'supabase' },
-  { name: 'Claude', logo: '/tech/claude-mark.svg', variant: 'claude' },
+  { name: 'Claude Code', logo: '/tech/claude-mark.svg', variant: 'claude' },
 ]
 
 function TechnologyList() {
