@@ -4,7 +4,7 @@ const technologies = [
   { name: 'Meta', logo: '/tech/meta-mark.svg', variant: 'meta' },
   { name: 'n8n', logo: '/tech/n8n-mark.svg', variant: 'n8n' },
   { name: 'Supabase', logo: '/tech/supabase-mark.svg', variant: 'supabase' },
-  { name: 'Claude', logo: '/tech/claude-mark.svg', variant: 'claude' },
+  { name: 'Claude', logo: '/tech/claude-wordmark.png', variant: 'claude', wordmark: true },
 ]
 
 function TechnologyList({ ariaHidden = false }) {
@@ -12,8 +12,14 @@ function TechnologyList({ ariaHidden = false }) {
     <ul className="tech-marquee-group" aria-hidden={ariaHidden || undefined}>
       {technologies.map((technology) => (
         <li className={`tech-item tech-item--${technology.variant}`} key={technology.name}>
-          <img src={technology.logo} alt={technology.name} />
-          <span>{technology.name}</span>
+          {technology.wordmark ? (
+            <img className="tech-wordmark" src={technology.logo} alt={technology.name} />
+          ) : (
+            <>
+              <img src={technology.logo} alt={technology.name} />
+              <span>{technology.name}</span>
+            </>
+          )}
         </li>
       ))}
     </ul>
