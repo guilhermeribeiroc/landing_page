@@ -508,3 +508,6 @@ ul { list-style: none; }
 .hero-diagnostic-cta:hover { background: #d5fffb; box-shadow: 0 0 0 1px rgba(226, 255, 251, .5), 0 22px 52px rgba(110, 233, 225, .42); }
 @keyframes diagnosticGlow { 50% { box-shadow: 0 0 0 7px rgba(103, 218, 212, 0), 0 20px 48px rgba(93, 213, 207, .42); } }
 @media (prefers-reduced-motion: reduce) { .hero-diagnostic-cta { animation: none; } }
+
+.form-grid input { color: #0a2830; caret-color: #0a2830; font-weight: 600; }
+.form-grid input:focus { color: #071e25; background: #ffffff; }
