@@ -560,6 +560,7 @@ main { background: var(--site-background); background-attachment: fixed; }
 .solution-choice h3 { max-width: 13ch; margin-top: 35px; color: #ecf7f5; font-family: var(--display); font-size: clamp(1.75rem, 2.45vw, 2.45rem); letter-spacing: -.05em; line-height: .98; }
 .solution-choice > p { max-width: 41ch; min-height: 96px; margin-top: 17px; color: #a9c3c5; font-size: .84rem; line-height: 1.72; }
 .solution-preview { position: relative; overflow: hidden; min-height: 169px; margin-top: 27px; border: 1px solid rgba(178, 230, 226, .15); border-radius: 14px; background: #071923; }
+.solution-preview--landing { min-height: 0; aspect-ratio: 2840 / 1356; background: #171513; }.solution-preview--landing img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; }
 .preview-browser { height: 29px; display: flex; align-items: center; gap: 4px; padding: 0 11px; border-bottom: 1px solid rgba(188, 236, 232, .11); background: rgba(255, 255, 255, .035); }
 .preview-browser i { width: 5px; height: 5px; border-radius: 50%; background: #57838a; }.preview-browser span { margin-left: 4px; color: #7ca5a7; font-size: .52rem; }
 .preview-landing-copy { display: flex; flex-direction: column; min-height: 139px; padding: 18px 19px; background: radial-gradient(circle at 90% 7%, rgba(104, 231, 220, .24), transparent 32%), #0c2430; }

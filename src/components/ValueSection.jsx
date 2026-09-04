@@ -5,7 +5,8 @@ const solutionCards = [
     title: 'Landing pages que fazem sua oferta ser escolhida.',
     description: 'Transformamos uma boa solução em uma página clara, desejável e pronta para gerar conversas com as pessoas certas.',
     outcome: 'Para parar de perder oportunidades antes mesmo do primeiro contato.',
-    action: 'Ver caminhos de conversão',
+    action: 'Ver landing da OhFome',
+    href: 'https://ohfome.app/site/',
     visual: 'landing',
     featured: true,
   },
@@ -16,6 +17,7 @@ const solutionCards = [
     description: 'Desenhamos plataformas para reunir processos, dados e decisões sem obrigar a equipe a trabalhar em torno das ferramentas.',
     outcome: 'Para quem já cresceu mais rápido do que a rotina consegue acompanhar.',
     action: 'Conhecer nossos sistemas',
+    href: '#resultados',
     visual: 'system',
   },
   {
@@ -25,6 +27,7 @@ const solutionCards = [
     description: 'Conectamos as ferramentas que você já usa para que informação, tarefas e alertas cheguem ao lugar certo na hora certa.',
     outcome: 'Para reduzir retrabalho sem perder contexto, controle ou histórico.',
     action: 'Mapear uma automação',
+    href: '#diagnostico',
     visual: 'automation',
   },
 ]
@@ -42,7 +45,7 @@ function UseCaseIcon({ type }) {
 
 function SolutionVisual({ type }) {
   if (type === 'landing') {
-    return <div className="solution-preview solution-preview--landing" aria-hidden="true"><div className="preview-browser"><i /><i /><i /><span>suamarca.com</span></div><div className="preview-landing-copy"><small>UMA PROPOSTA QUE SE ENTENDE</small><b>Seu próximo cliente começa aqui.</b><em>Falar com especialista <span>→</span></em></div></div>
+    return <div className="solution-preview solution-preview--landing"><img src="/projects/ohfome-landing.png" alt="Prévia da landing page da OhFome" /></div>
   }
 
   if (type === 'system') {
@@ -129,7 +132,7 @@ export default function ValueSection() {
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
                 <SolutionVisual type={item.visual} />
-                <div className="solution-choice-bottom"><small>{item.outcome}</small><a href="#diagnostico">{item.action} <span aria-hidden="true">→</span></a></div>
+                <div className="solution-choice-bottom"><small>{item.outcome}</small><a href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}>{item.action} <span aria-hidden="true">→</span></a></div>
               </article>
             ))}
           </div>
