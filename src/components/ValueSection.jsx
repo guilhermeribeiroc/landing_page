@@ -155,8 +155,10 @@ export default function ValueSection() {
               <article className="system-case" key={system.name}>
                 <div className="system-case-copy">
                   <p>{system.category}</p>
-                  <div className="system-product-logo"><img src={system.logo} alt={`Logo ${system.name}`} /></div>
-                  <h3>{system.name}</h3>
+                  <div className="system-product-head">
+                    <div className="system-product-logo"><img src={system.logo} alt={`Logo ${system.name}`} /></div>
+                    <h3>{system.name}</h3>
+                  </div>
                   <span>{system.description}</span>
                   <ul>{system.features.map((feature) => <li key={feature}>{feature}</li>)}</ul>
                   <a href={system.href} target="_blank" rel="noopener noreferrer" className="system-case-link">
