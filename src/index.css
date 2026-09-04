@@ -516,7 +516,7 @@ ul { list-style: none; }
 .method-heading { display: grid; grid-template-columns: 1.35fr .65fr; gap: 84px; align-items: end; }
 .method-heading h2 { max-width: 700px; margin-top: 17px; font-family: var(--display); font-size: clamp(2.8rem, 5.2vw, 5.15rem); letter-spacing: -.055em; line-height: .94; }
 .method-heading > p { padding-bottom: 8px; color: #9bbaba; font-size: 1rem; line-height: 1.75; }
-.method-stages { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 64px; border-top: 1px solid rgba(163, 219, 216, .16); border-bottom: 1px solid rgba(163, 219, 216, .16); }
+.method-stages { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 64px; border-top: 1px solid rgba(163, 219, 216, .16); border-bottom: 1px solid rgba(163, 219, 216, .16); list-style: none; }
 .method-stages li { min-height: 250px; padding: 30px 34px 34px 0; border-right: 1px solid rgba(163, 219, 216, .14); }
 .method-stages li + li { padding-left: 34px; }.method-stages li:last-child { border-right: 0; }
 .method-stages span { color: #83c6c2; font-size: .7rem; font-weight: 800; letter-spacing: .13em; }.method-stages h3 { max-width: 250px; margin-top: 45px; font-family: var(--display); font-size: 1.62rem; letter-spacing: -.04em; line-height: 1; }.method-stages p { max-width: 30ch; margin-top: 15px; color: #a2bec0; font-size: .82rem; line-height: 1.7; }
