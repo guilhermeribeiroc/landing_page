@@ -59,6 +59,7 @@ const systemCases = [
     category: 'SaaS público · Saúde & atendimento',
     description: 'Agenda, prontuário, financeiro e relacionamento em uma operação clínica mais simples.',
     href: 'https://site.myclinica.online',
+    logo: '/myclinica-logo.png',
     features: ['Agenda inteligente', 'Prontuário digital', 'Financeiro integrado'],
     visual: 'clinic',
   },
@@ -67,6 +68,7 @@ const systemCases = [
     category: 'SaaS público · Gestão jurídica',
     description: 'Processos, prazos, clientes e resultados organizados para escritórios que precisam de visão.',
     href: 'https://gestprotech.com.br',
+    logo: '/gestprotech-logo.jpeg',
     features: ['Processos e prazos', 'Financeiro centralizado', 'Acessos por perfil'],
     visual: 'legal',
   },
@@ -153,6 +155,7 @@ export default function ValueSection() {
               <article className="system-case" key={system.name}>
                 <div className="system-case-copy">
                   <p>{system.category}</p>
+                  <div className="system-product-logo"><img src={system.logo} alt={`Logo ${system.name}`} /></div>
                   <h3>{system.name}</h3>
                   <span>{system.description}</span>
                   <ul>{system.features.map((feature) => <li key={feature}>{feature}</li>)}</ul>
