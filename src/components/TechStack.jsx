@@ -8,12 +8,16 @@ const technologies = [
 ]
 
 function TechnologyList() {
-  return technologies.map((technology) => (
-    <li className={`tech-item tech-item--${technology.variant}`} key={technology.name}>
-      <img src={technology.logo} alt={technology.name} />
-      <span>{technology.name}</span>
-    </li>
-  ))
+  return (
+    <ul className="tech-marquee-group">
+      {technologies.map((technology) => (
+        <li className={`tech-item tech-item--${technology.variant}`} key={technology.name}>
+          <img src={technology.logo} alt={technology.name} />
+          <span>{technology.name}</span>
+        </li>
+      ))}
+    </ul>
+  )
 }
 
 export default function TechStack() {
@@ -23,7 +27,10 @@ export default function TechStack() {
         <p>Tecnologias do ecossistema Otimiza</p>
       </div>
       <div className="tech-marquee">
-        <ul><TechnologyList /><TechnologyList /></ul>
+        <div className="tech-marquee-track">
+          <TechnologyList />
+          <TechnologyList />
+        </div>
       </div>
     </section>
   )
