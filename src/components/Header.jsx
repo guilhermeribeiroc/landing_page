@@ -45,6 +45,8 @@ export default function Header() {
                 {l.label}
               </motion.a>
             ))}
+          </nav>
+          <div className="header-action">
             <motion.a
               href="#diagnostico"
               className="button button--small"
@@ -54,11 +56,11 @@ export default function Header() {
             >
               Fazer diagnóstico
             </motion.a>
-          </nav>
 
-          <button className="menu-toggle" onClick={() => setMobileOpen(true)} aria-label="Abrir menu" aria-expanded={mobileOpen}>
-            <span /><span /><span />
-          </button>
+            <button className="menu-toggle" onClick={() => setMobileOpen(true)} aria-label="Abrir menu" aria-expanded={mobileOpen}>
+              <span /><span /><span />
+            </button>
+          </div>
         </div>
       </motion.header>
 
