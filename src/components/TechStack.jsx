@@ -30,7 +30,7 @@ export default function TechStack() {
   return (
     <section className="tech-stack" aria-label="Tecnologias do ecossistema Otimiza">
       <div className="container">
-        <p>Tecnologias do ecossistema Otimiza</p>
+        <p>Ferramentas parceiras da Otimiza AI</p>
       </div>
       <div className="tech-marquee">
         <div className="tech-marquee-track">

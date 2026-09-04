@@ -501,3 +501,10 @@ ul { list-style: none; }
 .tech-item--claude { min-width: 176px; }
 .tech-item--claude .tech-wordmark { width: 150px; height: 42px; object-fit: contain; }
 @media (max-width: 520px) { .tech-marquee .tech-marquee-group { gap: 30px; padding-right: 30px; } }
+
+.logo-icon--png { width: 38px; height: 38px; overflow: hidden; border-radius: 11px; box-shadow: 0 5px 14px rgba(0, 0, 0, .22); }
+.hero-diagnostic-cta { position: relative; min-height: 58px; padding-inline: 28px; background: #a9e6e2; box-shadow: 0 0 0 1px rgba(214, 255, 251, .22), 0 18px 42px rgba(93, 213, 207, .28); animation: diagnosticGlow 2.4s ease-in-out infinite; }
+.hero-diagnostic-cta::after { content: ''; position: absolute; inset: 4px; border: 1px solid rgba(255, 255, 255, .42); border-radius: 8px; pointer-events: none; }
+.hero-diagnostic-cta:hover { background: #d5fffb; box-shadow: 0 0 0 1px rgba(226, 255, 251, .5), 0 22px 52px rgba(110, 233, 225, .42); }
+@keyframes diagnosticGlow { 50% { box-shadow: 0 0 0 7px rgba(103, 218, 212, 0), 0 20px 48px rgba(93, 213, 207, .42); } }
+@media (prefers-reduced-motion: reduce) { .hero-diagnostic-cta { animation: none; } }

@@ -26,12 +26,12 @@ export default function Hero() {
               Transformamos planilhas, tarefas repetitivas e sistemas desconectados em processos automáticos, painéis de controle e uma operação mais eficiente.
             </motion.p>
             <motion.div className="hero-actions" variants={fadeUp} custom={2}>
-              <a href="#diagnostico" className="button">
+              <a href="#diagnostico" className="button hero-diagnostic-cta">
                 Fazer diagnóstico gratuito
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
               </a>
-              <a href="#como-funciona" className="text-link">
-                Como funciona a automação
+              <a href="#solucoes" className="text-link">
+                Ver soluções
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6" /></svg>
               </a>
             </motion.div>
