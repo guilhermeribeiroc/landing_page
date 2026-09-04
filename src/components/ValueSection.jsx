@@ -148,15 +148,17 @@ export default function ValueSection() {
 
           <div className="comparison">
             <div className="comparison-side comparison-side--manual">
-              <div className="comparison-head"><span>Operação manual</span><b>ATRITO</b></div>
+              <div className="comparison-head"><span><small>O CUSTO INVISÍVEL</small>Operação manual</span><b>ATRITO</b></div>
               <ul>{comparison.manual.map((item) => <li key={item}><i />{item}</li>)}</ul>
+              <p className="comparison-verdict">Quanto mais a empresa cresce, mais a rotina depende de esforço manual.</p>
             </div>
             <div className="comparison-switch" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
             </div>
             <div className="comparison-side comparison-side--automatic">
-              <div className="comparison-head"><span>Operação automatizada</span><b>FLUXO</b></div>
+              <div className="comparison-head"><span><small>O RITMO QUE O NEGÓCIO PRECISA</small>Operação automatizada</span><b>FLUXO</b></div>
               <ul>{comparison.automatic.map((item) => <li key={item}><i />{item}</li>)}</ul>
+              <p className="comparison-verdict">A equipe sabe o que fazer. A informação chega. O negócio continua avançando.</p>
             </div>
           </div>
 
