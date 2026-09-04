@@ -53,6 +53,42 @@ const comparison = {
   ],
 }
 
+const systemCases = [
+  {
+    name: 'MyClínica',
+    category: 'Saúde & atendimento',
+    description: 'Agenda, prontuário, financeiro e relacionamento em uma operação clínica mais simples.',
+    href: 'https://site.myclinica.online',
+    features: ['Agenda inteligente', 'Prontuário digital', 'Financeiro integrado'],
+    visual: 'clinic',
+  },
+  {
+    name: 'GestProTech',
+    category: 'Gestão jurídica',
+    description: 'Processos, prazos, clientes e resultados organizados para escritórios que precisam de visão.',
+    href: 'https://gestprotech.com.br',
+    features: ['Processos e prazos', 'Financeiro centralizado', 'Acessos por perfil'],
+    visual: 'legal',
+  },
+]
+
+function SystemVisual({ type }) {
+  const rows = type === 'clinic' ? ['Agenda de hoje', 'Pacientes confirmados', 'Receita do período'] : ['Prazos da semana', 'Processos ativos', 'Honorários a receber']
+  return (
+    <div className={`system-visual system-visual--${type}`} aria-hidden="true">
+      <div className="system-window-bar"><i /><i /><i /><span>{type === 'clinic' ? 'myclinica.app' : 'gestprotech.app'}</span></div>
+      <div className="system-window-body">
+        <div className="system-side"><b /><b /><b /><b /></div>
+        <div className="system-main">
+          <div className="system-main-head"><span /><em>Visão geral</em><strong>Atualizado agora</strong></div>
+          <div className="system-metric-row"><div><small>Indicador</small><b>{type === 'clinic' ? 'R$ 42,8 mil' : '84 processos'}</b></div><div className="system-graphic"><i /><i /><i /><i /><i /><i /></div></div>
+          <div className="system-list">{rows.map((row, index) => <div key={row}><span>{row}</span><b>{String(index + 1).padStart(2, '0')}</b></div>)}</div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export default function ValueSection() {
   return (
     <>
@@ -102,8 +138,9 @@ export default function ValueSection() {
       </section>
 
       <section className="proof" id="resultados">
-        <div className="container proof-layout">
+        <div className="container">
           <div className="proof-copy">
+            <p className="section-kicker">Sistemas em operação</p>
             <h2>Sistemas que organizam toda a operação.</h2>
             <p>Da agenda de uma clínica aos prazos de um escritório jurídico: cada plataforma é desenhada para reunir a rotina, os dados e as decisões em um só lugar.</p>
             <a href="#diagnostico" className="text-link">
@@ -111,69 +148,22 @@ export default function ValueSection() {
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
             </a>
           </div>
-          <div className="proof-project proof-project--primary">
-            <a
-              className="proof-image"
-              href={`${import.meta.env.BASE_URL}myclinica_dashboard.png`}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Abrir captura completa do MyClínica"
-            >
-              <img src={`${import.meta.env.BASE_URL}myclinica_dashboard.png`} alt="Dashboard completo do sistema MyClínica com indicadores financeiros e de atendimentos" />
-              <span>
-                Abrir captura completa
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9" /></svg>
-              </span>
-            </a>
-            <div className="proof-project-body">
-              <div className="proof-project-copy">
-                <h3>MyClínica</h3>
-                <p>Sistema web para clínicas e consultórios que reúne agenda, pacientes, prontuário eletrônico e gestão financeira. O painel apresenta atendimentos, receitas e despesas para facilitar o acompanhamento diário.</p>
-                <a href="https://site.myclinica.online" target="_blank" rel="noopener noreferrer" className="proof-link">
-                  Conhecer o MyClínica
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9" /></svg>
-                </a>
-              </div>
-              <ul className="proof-features" aria-label="Principais recursos do MyClínica">
-                <li>Agenda com Google Calendar</li>
-                <li>Prontuário eletrônico</li>
-                <li>Financeiro e indicadores</li>
-                <li>Assistente com inteligência artificial</li>
-              </ul>
-              <p className="proof-note">Interface do sistema · dados ilustrativos</p>
-            </div>
-          </div>
-          <div className="proof-project proof-project--secondary">
-            <a
-              className="proof-image"
-              href={`${import.meta.env.BASE_URL}gestprotech_estatisticas.jpg`}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Abrir captura completa do GestProTech"
-            >
-              <img src={`${import.meta.env.BASE_URL}gestprotech_estatisticas.jpg`} alt="Painel completo do GestProTech com desempenho histórico, indicadores e faturamento" />
-              <span>
-                Abrir captura completa
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9" /></svg>
-              </span>
-            </a>
-            <div className="proof-project-body">
-              <div className="proof-project-copy">
-                <h3>GestProTech</h3>
-                <p>Plataforma de gestão para escritórios de advocacia. Centraliza processos, clientes, audiências, prazos, documentos e finanças, com acessos por perfil e visão histórica do desempenho.</p>
-                <a href="https://gestprotech.com.br" target="_blank" rel="noopener noreferrer" className="proof-link">
-                  Conhecer o GestProTech
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9" /></svg>
-                </a>
-              </div>
-              <ul className="proof-features" aria-label="Principais recursos do GestProTech">
-                <li>Processos, audiências e prazos</li>
-                <li>Clientes e documentos</li>
-                <li>Honorários e financeiro</li>
-                <li>Perfis de acesso e parcerias</li>
-              </ul>
-              <p className="proof-note">Interface do sistema · dados ilustrativos</p>
-            </div>
+          <div className="system-cases">
+            {systemCases.map((system) => (
+              <article className="system-case" key={system.name}>
+                <div className="system-case-copy">
+                  <p>{system.category}</p>
+                  <h3>{system.name}</h3>
+                  <span>{system.description}</span>
+                  <ul>{system.features.map((feature) => <li key={feature}>{feature}</li>)}</ul>
+                  <a href={system.href} target="_blank" rel="noopener noreferrer" className="system-case-link">
+                    Conhecer {system.name}
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9" /></svg>
+                  </a>
+                </div>
+                <SystemVisual type={system.visual} />
+              </article>
+            ))}
           </div>
         </div>
       </section>

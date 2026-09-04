@@ -11,11 +11,16 @@ const fadeUp = {
 export default function Hero() {
   return (
     <section className="hero" id="hero">
-      <div className="container">
+      <div className="hero-glow hero-glow--left" aria-hidden="true" />
+      <div className="hero-glow hero-glow--right" aria-hidden="true" />
+      <div className="container hero-container">
         <div className="hero-layout">
           <motion.div className="hero-copy" initial="hidden" animate="visible">
+            <motion.p className="hero-eyebrow" variants={fadeUp} custom={0}>
+              <span aria-hidden="true" /> Arquitetura digital para operações reais
+            </motion.p>
             <motion.h1 variants={fadeUp} custom={0}>
-              Menos trabalho manual. <strong>Mais empresa acontecendo.</strong>
+              Menos operação manual. <strong>Mais negócio em movimento.</strong>
             </motion.h1>
             <motion.p className="hero-lead" variants={fadeUp} custom={1}>
               Transformamos planilhas, tarefas repetitivas e sistemas desconectados em processos automáticos, painéis de controle e uma operação mais eficiente.
