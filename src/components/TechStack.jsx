@@ -1,16 +1,16 @@
 const technologies = [
-  { name: 'Gemini', mark: '✦' },
-  { name: 'ChatGPT', mark: '◎' },
-  { name: 'Meta', mark: '∞' },
-  { name: 'n8n', mark: '⌘' },
-  { name: 'Supabase', mark: '▲' },
-  { name: 'Claude', mark: '✳' },
+  { name: 'Gemini', logo: '/tech/gemini.svg' },
+  { name: 'ChatGPT', logo: '/tech/chatgpt.svg' },
+  { name: 'Meta', logo: '/tech/meta.svg' },
+  { name: 'n8n', logo: '/tech/n8n.svg' },
+  { name: 'Supabase', logo: '/tech/supabase.svg' },
+  { name: 'Claude', logo: '/tech/claude.svg' },
 ]
 
 function TechnologyList() {
   return technologies.map((technology) => (
     <li className="tech-item" key={technology.name}>
-      <span aria-hidden="true">{technology.mark}</span>
+      <img src={technology.logo} alt="" aria-hidden="true" />
       {technology.name}
     </li>
   ))

@@ -40,51 +40,6 @@ export default function Hero() {
             </motion.p>
           </motion.div>
 
-          <motion.div
-            className="operation-map"
-            initial={{ opacity: 0, clipPath: 'inset(12% 0 0 0)' }}
-            animate={{ opacity: 1, clipPath: 'inset(0% 0 0 0)' }}
-            transition={{ duration: 0.9, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            aria-label="Demonstração de um processo manual transformado em fluxo automático"
-          >
-            <div className="map-topline">
-              <span>Fluxo operacional</span>
-              <span className="live-status"><i /> Automação ativa</span>
-            </div>
-            <div className="map-stage map-stage--input">
-              <span className="stage-label">ENTRADAS</span>
-              <div className="input-stream">
-                <span>Formulário recebido</span>
-                <span>Cadastro atualizado</span>
-                <span>Prazo alterado</span>
-              </div>
-            </div>
-            <div className="automation-core">
-              <div className="core-ring"><span>AI</span></div>
-              <div>
-                <strong>Otimiza Flow</strong>
-                <small>validando · organizando · direcionando</small>
-              </div>
-            </div>
-            <div className="map-stage map-stage--output">
-              <span className="stage-label">AÇÕES AUTOMÁTICAS</span>
-              <ul>
-                <li><span>01</span> Responsável notificado <b>feito</b></li>
-                <li><span>02</span> Tarefa criada <b>feito</b></li>
-                <li><span>03</span> Dashboard atualizado <b>feito</b></li>
-              </ul>
-            </div>
-            <div className="map-footer">
-              <span>Sem copiar dados</span><span>Sem cobrar manualmente</span><span>Com histórico</span>
-            </div>
-          </motion.div>
-        </div>
-
-        <div className="pain-strip" aria-label="Problemas que a OtimizaAI resolve">
-          <span>Planilhas duplicadas</span>
-          <span>Relatórios demorados</span>
-          <span>Cadastros repetidos</span>
-          <span>Equipe presa no operacional</span>
         </div>
       </div>
     </section>
