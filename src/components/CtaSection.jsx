@@ -4,12 +4,12 @@ export default function CtaSection() {
       <div className="container">
         <div className="cta-box">
           <div className="cta-copy">
-            <h2>Sua empresa não precisa continuar presa a tarefas que poderiam acontecer sozinhas.</h2>
-            <p>Faça o diagnóstico gratuito e descubra qual gargalo da sua operação merece atenção primeiro.</p>
+            <h2>Descubra o primeiro passo para tirar a operação do manual.</h2>
+            <p>Em poucos minutos, você identifica o processo que merece atenção primeiro e ganha clareza para a próxima conversa.</p>
           </div>
           <div className="cta-action">
-            <a href="#diagnostico" className="button">Fazer meu diagnóstico</a>
-            <small>5 perguntas · resultado personalizado</small>
+            <a href="#diagnostico" className="button">Mapear minhas prioridades</a>
+            <small>5 perguntas · resultado imediato · sem compromisso</small>
           </div>
         </div>
       </div>

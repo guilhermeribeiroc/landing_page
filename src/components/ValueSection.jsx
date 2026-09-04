@@ -81,7 +81,7 @@ function SystemVisual({ type }) {
         <div className="system-side"><b /><b /><b /><b /></div>
         <div className="system-main">
           <div className="system-main-head"><span /><em>Visão geral</em><strong>Atualizado agora</strong></div>
-          <div className="system-metric-row"><div><small>Indicador</small><b>{type === 'clinic' ? 'R$ 42,8 mil' : '84 processos'}</b></div><div className="system-graphic"><i /><i /><i /><i /><i /><i /></div></div>
+          <div className="system-metric-row"><div><small>Visão central</small><b>Atualizada</b></div><div className="system-graphic"><i /><i /><i /><i /><i /><i /></div></div>
           <div className="system-list">{rows.map((row, index) => <div key={row}><span>{row}</span><b>{String(index + 1).padStart(2, '0')}</b></div>)}</div>
         </div>
       </div>

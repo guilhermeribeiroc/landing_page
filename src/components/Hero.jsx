@@ -23,7 +23,7 @@ export default function Hero() {
               Menos operação manual. <strong>Mais negócio em movimento.</strong>
             </motion.h1>
             <motion.p className="hero-lead" variants={fadeUp} custom={1}>
-              Transformamos planilhas, tarefas repetitivas e sistemas desconectados em processos automáticos, painéis de controle e uma operação mais eficiente.
+              Criamos sistemas, landing pages e automações para transformar cada contato em processo — e cada processo em crescimento.
             </motion.p>
             <motion.div className="hero-actions" variants={fadeUp} custom={2}>
               <a href="#diagnostico" className="button hero-diagnostic-cta">

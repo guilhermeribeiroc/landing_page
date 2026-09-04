@@ -10,8 +10,8 @@ export default function HowItWorks() {
       <div className="container">
         <div className="services-intro">
           <p className="section-kicker">O que a Otimiza entrega</p>
-          <h2>Presença digital para atrair. Sistemas para fazer acontecer.</h2>
-          <p>Não existe solução de prateleira para uma operação que quer crescer. A gente combina estratégia, design e tecnologia para construir o próximo passo da sua empresa.</p>
+          <h2>Não vendemos ferramentas soltas. Criamos uma operação que faz sentido.</h2>
+          <p>Landing pages atraem oportunidades. Sistemas organizam a rotina. Automações conectam as etapas para o negócio avançar com menos atrito.</p>
         </div>
 
         <div className="services-grid">
@@ -27,13 +27,13 @@ export default function HowItWorks() {
 
         <div className="evidence-callout">
           <div>
-            <p className="section-kicker">Resultados que importam</p>
-            <h3>Seu projeto pode ser o próximo a entrar aqui.</h3>
-            <span>Este espaço foi desenhado para reunir resultados, depoimentos e aprendizados reais de quem constrói com a Otimiza.</span>
+            <p className="section-kicker">Prova que será medida</p>
+            <h3>O que construímos precisa funcionar na rotina.</h3>
+            <span>Os próximos cases vão mostrar o contexto do cliente, a solução implementada e a mudança que foi possível medir — sem números inventados.</span>
           </div>
           <div className="evidence-slots" aria-label="Prévia da futura seção de resultados e depoimentos">
-            <div><small>RESULTADO REAL</small><b>Métrica do projeto</b><span>Ex.: mais eficiência, conversões ou controle operacional.</span></div>
-            <div><small>FEEDBACK REAL</small><b>Voz de quem usa</b><span>O depoimento do cliente entra aqui com contexto e identidade.</span></div>
+            <div><small>ANTES E DEPOIS</small><b>O problema que mudou</b><span>Contexto, solução e o indicador acompanhado em cada projeto.</span></div>
+            <div><small>QUEM VIVE A ROTINA</small><b>Feedback do cliente</b><span>Depoimentos entram com nome, empresa e autorização.</span></div>
           </div>
         </div>
       </div>
