@@ -508,6 +508,7 @@ ul { list-style: none; }
 .tech-item--docker { min-width: 142px; }
 .tech-item--antigravity { min-width: 176px; }
 .tech-item--antigravity img { width: 29px; height: 29px; }
+.tech-item--gemini img { filter: drop-shadow(0 0 8px rgba(101, 153, 255, .24)); }
 @media (max-width: 520px) { .tech-marquee .tech-marquee-group { gap: 30px; padding-right: 30px; } }
 
 .logo-icon--png { width: 38px; height: 38px; padding: 0; overflow: hidden; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
