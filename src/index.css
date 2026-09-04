@@ -498,5 +498,5 @@ ul { list-style: none; }
 .tech-marquee-track { display: flex; width: max-content; will-change: transform; animation: techScrollSeamless 28s linear infinite; }
 .tech-marquee .tech-marquee-group { display: flex; flex: 0 0 auto; align-items: center; width: auto; gap: 46px; margin: 0; padding: 0 46px 0 0; animation: none; }
 .tech-marquee:hover .tech-marquee-track { animation-play-state: paused; }
-@keyframes techScrollSeamless { to { transform: translateX(-50%); } }
+@keyframes techScrollSeamless { to { transform: translateX(-25%); } }
 @media (max-width: 520px) { .tech-marquee .tech-marquee-group { gap: 30px; padding-right: 30px; } }

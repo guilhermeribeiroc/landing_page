@@ -4,12 +4,12 @@ const technologies = [
   { name: 'Meta', logo: '/tech/meta-mark.svg', variant: 'meta' },
   { name: 'n8n', logo: '/tech/n8n-mark.svg', variant: 'n8n' },
   { name: 'Supabase', logo: '/tech/supabase-mark.svg', variant: 'supabase' },
-  { name: 'Claude Code', logo: '/tech/claude-mark.svg', variant: 'claude' },
+  { name: 'Claude', logo: '/tech/claude-mark.svg', variant: 'claude' },
 ]
 
-function TechnologyList() {
+function TechnologyList({ ariaHidden = false }) {
   return (
-    <ul className="tech-marquee-group">
+    <ul className="tech-marquee-group" aria-hidden={ariaHidden || undefined}>
       {technologies.map((technology) => (
         <li className={`tech-item tech-item--${technology.variant}`} key={technology.name}>
           <img src={technology.logo} alt={technology.name} />
@@ -29,7 +29,9 @@ export default function TechStack() {
       <div className="tech-marquee">
         <div className="tech-marquee-track">
           <TechnologyList />
-          <TechnologyList />
+          <TechnologyList ariaHidden />
+          <TechnologyList ariaHidden />
+          <TechnologyList ariaHidden />
         </div>
       </div>
     </section>
