@@ -503,6 +503,10 @@ ul { list-style: none; }
 .tech-marquee-track { display: flex; width: max-content; will-change: transform; animation: techScrollSeamless 28s linear infinite; }
 .tech-marquee .tech-marquee-group { display: flex; flex: 0 0 auto; align-items: center; width: auto; gap: 46px; margin: 0; padding: 0 46px 0 0; animation: none; }
 @keyframes techScrollSeamless { to { transform: translateX(-25%); } }
+/* O Safari do iPhone só aplica a máscara com prefixo; sem ela a faixa corta seca nas bordas. */
+.tech-marquee { -webkit-mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent); }
+/* A faixa continua rodando com "reduzir movimento" ligado: sem ela a seção vira uma lista parada. */
+@media (prefers-reduced-motion: reduce) { .tech-marquee-track { animation-duration: 28s !important; animation-iteration-count: infinite !important; } }
 .tech-item--claude { min-width: 176px; }
 .tech-item--claude .tech-wordmark { width: 150px; height: 42px; object-fit: contain; }
 .tech-item--postgresql { min-width: 168px; }
