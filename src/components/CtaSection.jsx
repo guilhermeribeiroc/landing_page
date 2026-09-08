@@ -9,7 +9,7 @@ export default function CtaSection() {
           </div>
           <div className="cta-action">
             <a href="#diagnostico" className="button">Mapear minhas prioridades</a>
-            <small>5 perguntas · resultado imediato · sem compromisso</small>
+            <small>6 perguntas · resultado imediato · sem compromisso</small>
           </div>
         </div>
       </div>

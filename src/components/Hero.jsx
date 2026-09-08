@@ -36,7 +36,7 @@ export default function Hero() {
               </a>
             </motion.div>
             <motion.p className="hero-note" variants={fadeUp} custom={3}>
-              5 perguntas · cerca de 2 minutos · sem compromisso
+              6 perguntas · cerca de 2 minutos · sem compromisso
             </motion.p>
           </motion.div>
 
