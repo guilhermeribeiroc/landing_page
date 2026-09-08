@@ -259,6 +259,7 @@ ul { list-style: none; }
 .cta-copy h2 { font-size: clamp(2.3rem, 4.2vw, 4.1rem); }
 .cta-copy p { margin-top: 20px; color: var(--text-muted); max-width: 62ch; }
 .cta-action { display: flex; flex-direction: column; align-items: stretch; gap: 12px; position: relative; z-index: 1; }
+.cta-action .button { white-space: nowrap; }
 .cta-action small { text-align: center; color: #9bb6af; font-size: 0.68rem; }
 
 .footer { padding: 78px 0 28px; background: #06141b; border-top: 1px solid var(--line); }

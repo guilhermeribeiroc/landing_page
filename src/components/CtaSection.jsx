@@ -8,7 +8,7 @@ export default function CtaSection() {
             <p>Em poucos minutos, você identifica o processo que merece atenção primeiro e ganha clareza para a próxima conversa.</p>
           </div>
           <div className="cta-action">
-            <a href="#diagnostico" className="button">Mapear minhas prioridades</a>
+            <a href="#diagnostico" className="button">Começar diagnóstico</a>
             <small>6 perguntas · resultado imediato · sem compromisso</small>
           </div>
         </div>
