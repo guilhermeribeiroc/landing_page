@@ -6,7 +6,6 @@ import MethodSection from './components/MethodSection'
 import ValueSection from './components/ValueSection'
 import DiagnosticQuiz from './components/DiagnosticQuiz'
 import FAQ from './components/FAQ'
-import CtaSection from './components/CtaSection'
 import Footer from './components/Footer'
 
 function App() {
@@ -21,7 +20,6 @@ function App() {
         <ValueSection />
         <DiagnosticQuiz />
         <FAQ />
-        <CtaSection />
       </main>
       <Footer />
     </>
