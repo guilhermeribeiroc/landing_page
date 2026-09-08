@@ -13,10 +13,10 @@ function ChatScene() {
   return <div className="ai-phone ai-phone--iphone" aria-label="Exemplo de conversa no WhatsApp com IA"><span className="ai-phone-button ai-phone-button--silent" /><span className="ai-phone-button ai-phone-button--volume-up" /><span className="ai-phone-button ai-phone-button--volume-down" /><span className="ai-phone-button ai-phone-button--power" /><div className="ai-phone-speaker" /><div className="ai-chat-scene ai-whatsapp">
     <div className="ai-whatsapp-head"><div><i>◔</i><span><b>Alice · Assistente virtual</b><small>online agora</small></span></div><strong>⋮</strong></div>
     <div className="ai-whatsapp-chat">
-      <div className="wa-message wa-message--incoming">Olá! Gostaria de entender como vocês podem ajudar meu escritório.<time>22:14</time></div>
-      <div className="wa-message wa-message--outgoing">Olá, Mariana! Sou a Alice, assistente virtual da Otimiza. Posso fazer algumas perguntas rápidas para direcionar você? <time>22:14 ✓✓</time></div>
-      <div className="wa-message wa-message--incoming">Claro. Estamos perdendo muitos contatos fora do horário.<time>22:15</time></div>
-      <div className="wa-message wa-message--outgoing">Entendi. Já registrei seu interesse e posso sugerir uma conversa com nossa equipe no melhor horário para você.<time>22:15 ✓✓</time></div>
+      <div className="wa-message wa-message--incoming">Olá! Sou a Camila, cliente nova. Gostaria de marcar uma consulta.<time>22:14</time></div>
+      <div className="wa-message wa-message--outgoing">Olá, Camila! Sou a Alice, assistente virtual. Posso te ajudar a encontrar o melhor horário. Qual período você prefere?<time>22:14 ✓✓</time></div>
+      <div className="wa-message wa-message--incoming">De preferência à tarde, ainda esta semana.<time>22:15</time></div>
+      <div className="wa-message wa-message--outgoing">Perfeito. Encontrei disponibilidade na quinta às 15h. Posso confirmar sua consulta?<time>22:15 ✓✓</time></div>
       <div className="wa-typing"><i /><i /><i /> Alice está digitando</div>
     </div>
     <div className="ai-whatsapp-input">Mensagem <span>➤</span></div>
