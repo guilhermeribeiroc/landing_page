@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 
-const questions = [
+const generalQuestions = [
   {
     id: 'team',
     shortTitle: 'Equipe envolvida',
@@ -52,11 +52,146 @@ const questions = [
   },
 ]
 
-function getResult(score) {
-  if (score >= 15) return { label: 'Prioridade alta', text: 'Sua empresa mostra uma oportunidade clara de destravar a operação ou a captação de novos contatos. O próximo passo é priorizar o ponto de maior impacto.' }
-  if (score >= 10) return { label: 'Alto potencial', text: 'Já existem sinais de tarefas, ferramentas ou canais de captação que podem ser organizados para o negócio avançar com menos atrito.' }
-  if (score >= 6) return { label: 'Potencial moderado', text: 'Existe pelo menos um ponto de partida que pode simplificar a rotina ou tornar a presença digital mais efetiva.' }
-  return { label: 'Estruturação inicial', text: 'O primeiro ganho está em clarear a rotina e a jornada do cliente antes de definir a melhor solução.' }
+const automationQuestions = [
+  {
+    id: 'repetition',
+    shortTitle: 'Tarefas repetidas',
+    title: 'Onde sua equipe perde mais tempo repetindo tarefas?',
+    options: [
+      ['Copiando dados entre sistemas ou planilhas', 3], ['Cobrando retornos, prazos e aprovações', 3], ['Respondendo as mesmas dúvidas no atendimento', 3], ['Atualizando relatórios e indicadores', 2], ['Ainda não conseguimos apontar', 1],
+    ],
+  },
+  {
+    id: 'handoff',
+    shortTitle: 'Andamento das tarefas',
+    title: 'Quando uma tarefa precisa avançar, como a equipe fica sabendo?',
+    options: [
+      ['Alguém precisa avisar manualmente', 3], ['Usamos mensagens, lembretes ou planilhas', 3], ['O sistema avisa em alguns casos', 1], ['Já acontece automaticamente', 0],
+    ],
+  },
+  {
+    id: 'contacts',
+    shortTitle: 'Novos contatos',
+    title: 'Quando chega um novo contato, o que acontece depois?',
+    options: [
+      ['A equipe responde e registra tudo manualmente', 3], ['A resposta depende de quem está disponível', 3], ['Parte do processo já é automática', 1], ['O contato já segue um fluxo definido', 0],
+    ],
+  },
+  {
+    id: 'integration',
+    shortTitle: 'Integração entre sistemas',
+    title: 'Os sistemas que você usa trocam informações entre si?',
+    options: [
+      ['Não, precisamos copiar os dados', 3], ['Só algumas informações se conectam', 2], ['Temos integrações, mas ainda há retrabalho', 1], ['Sim, a maior parte já está integrada', 0],
+    ],
+  },
+  {
+    id: 'automationGoal',
+    shortTitle: 'Primeira automação',
+    title: 'O que você gostaria de automatizar primeiro?',
+    options: [
+      ['Atendimento e qualificação de contatos', 3], ['Agendamentos, lembretes e retornos', 3], ['Cadastro e atualização de dados', 2], ['Processos internos e aprovações', 2], ['Relatórios e acompanhamento de resultados', 2],
+    ],
+  },
+  {
+    id: 'timing',
+    shortTitle: 'Momento de agir',
+    title: 'Quando você quer colocar essa automação para funcionar?',
+    options: [
+      ['O quanto antes', 3], ['Nos próximos 30 dias', 2], ['Nos próximos 90 dias', 1], ['Ainda estamos entendendo as opções', 0],
+    ],
+  },
+]
+
+const attendanceQuestions = [
+  {
+    id: 'responseTime',
+    shortTitle: 'Tempo de resposta',
+    title: 'Quanto tempo sua equipe demora para responder um novo contato?',
+    options: [
+      ['Respondemos na hora, quase sempre', 0], ['Em até 30 minutos', 1], ['Algumas horas depois', 2], ['Só no dia seguinte ou depois', 3],
+    ],
+  },
+  {
+    id: 'revenueLoss',
+    shortTitle: 'Perda de faturamento',
+    title: 'Você acredita que a empresa deixa de faturar por causa do atendimento?',
+    options: [
+      ['Não, não vejo esse problema', 0], ['Talvez, mas nunca medimos isso', 2], ['Sim, provavelmente perdemos vendas', 3], ['Sim, isso já é um problema conhecido', 3],
+    ],
+  },
+  {
+    id: 'afterHours',
+    shortTitle: 'Atendimento fora do horário',
+    title: 'O que acontece quando um cliente chama fora do horário comercial?',
+    options: [
+      ['Ele espera até o próximo dia útil', 3], ['Alguém da equipe responde pelo celular', 2], ['Já temos algum atendimento automático', 1], ['Quase não recebemos contato fora do horário', 0],
+    ],
+  },
+  {
+    id: 'followUp',
+    shortTitle: 'Acompanhamento dos contatos',
+    title: 'Depois do primeiro contato, como funciona o acompanhamento?',
+    options: [
+      ['Muitas vezes ninguém retoma o contato', 3], ['Depende de alguém lembrar de retornar', 3], ['Temos um processo, mas ainda manual', 2], ['Já acontece de forma automática', 0],
+    ],
+  },
+  {
+    id: 'gain',
+    shortTitle: 'Maior ganho esperado',
+    title: 'Se um atendimento respondesse, qualificasse e agendasse sozinho, qual seria o maior ganho?',
+    options: [
+      ['Parar de perder contatos e vendas', 3], ['Responder o cliente muito mais rápido', 3], ['Tirar tarefas repetitivas da equipe', 2], ['Ainda não sei dizer', 1],
+    ],
+  },
+]
+
+const variants = {
+  general: {
+    questions: generalQuestions,
+    storageKey: 'otimiza-diagnostic',
+    heading: 'Onde sua empresa pode destravar operação e crescimento?',
+    description: 'Responda seis perguntas. Você recebe um score de oportunidade e descobre se o melhor ponto de partida é uma landing page, um sistema ou uma automação.',
+    introTitle: 'Diagnóstico gratuito de operação e crescimento',
+    introText: 'Identifique o maior gargalo da rotina ou da captação de contatos e descubra o melhor primeiro passo.',
+    primaryFocus: (answers) => (answers.landing?.points >= 2 ? 'Landing page e conversão' : (answers.bottleneck?.label || 'Mapeamento operacional')),
+    getResult(score) {
+      if (score >= 15) return { label: 'Prioridade alta', text: 'Sua empresa mostra uma oportunidade clara de destravar a operação ou a captação de novos contatos. O próximo passo é priorizar o ponto de maior impacto.' }
+      if (score >= 10) return { label: 'Alto potencial', text: 'Já existem sinais de tarefas, ferramentas ou canais de captação que podem ser organizados para o negócio avançar com menos atrito.' }
+      if (score >= 6) return { label: 'Potencial moderado', text: 'Existe pelo menos um ponto de partida que pode simplificar a rotina ou tornar a presença digital mais efetiva.' }
+      return { label: 'Estruturação inicial', text: 'O primeiro ganho está em clarear a rotina e a jornada do cliente antes de definir a melhor solução.' }
+    },
+  },
+  automacoes: {
+    questions: automationQuestions,
+    storageKey: 'otimiza-diagnostic-automation',
+    heading: 'Onde uma automação pode fazer diferença na sua rotina?',
+    description: 'Responda seis perguntas e descubra qual tarefa vale automatizar primeiro.',
+    introTitle: 'Diagnóstico gratuito de automações',
+    introText: 'Em poucos minutos, você identifica onde sua equipe perde tempo e qual automação vale priorizar.',
+    primaryFocus: (answers) => answers.automationGoal?.label || 'Mapeamento de automações',
+    getResult(score) {
+      if (score >= 15) return { label: 'Prioridade alta', text: 'Há tarefas manuais e pontos de acompanhamento que podem ser automatizados. O próximo passo é escolher por onde começar.' }
+      if (score >= 10) return { label: 'Bom potencial', text: 'Sua rotina tem processos que podem ganhar velocidade com menos trabalho manual e mais acompanhamento.' }
+      if (score >= 6) return { label: 'Potencial moderado', text: 'Existe um bom ponto de partida para organizar uma tarefa e testar uma automação.' }
+      return { label: 'Primeiro mapeamento', text: 'Vale listar as tarefas que mais se repetem antes de decidir qual automação faz sentido.' }
+    },
+  },
+  atendimento: {
+    questions: attendanceQuestions,
+    storageKey: 'otimiza-diagnostic-attendance',
+    heading: 'Seu atendimento está deixando dinheiro na mesa?',
+    description: 'Responda cinco perguntas rápidas e descubra o quanto uma IA de atendimento pode destravar na sua operação.',
+    introTitle: 'Diagnóstico gratuito de atendimento com IA',
+    introText: 'Em poucos minutos, você descobre se o atendimento está custando vendas e onde a IA pode ajudar primeiro.',
+    primaryFocus: (answers) => answers.gain?.label || 'Mapeamento do atendimento',
+    getResult(score) {
+      if (score >= 11) return { label: 'Prioridade alta', text: 'O atendimento hoje provavelmente está custando vendas e horas da equipe. Automatizar essa frente deve ser o próximo passo.' }
+      if (score >= 7) return { label: 'Bom potencial', text: 'Existem sinais claros de que uma IA de atendimento reduziria a demora e o retrabalho da equipe.' }
+      if (score >= 4) return { label: 'Potencial moderado', text: 'Já existe um ponto de partida para tirar tarefas repetitivas do atendimento e responder mais rápido.' }
+      return { label: 'Atendimento estruturado', text: 'Seu atendimento já está relativamente organizado. Vale mapear onde a IA pode ganhar tempo extra.' }
+    },
+  },
 }
 
 const initialContact = { name: '', phone: '', email: '', company: '', consent: false }
@@ -69,22 +204,26 @@ function BackIcon() {
   return <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" /></svg>
 }
 
-export default function DiagnosticQuiz() {
+export default function DiagnosticQuiz({ variant, anchorId }) {
+  const urlVariant = new URLSearchParams(window.location.search).get('diagnostico') === 'automacoes' ? 'automacoes' : 'general'
+  const active = variants[variant || urlVariant] || variants.general
+  const questions = active.questions
+  const storageKey = active.storageKey
   const [stage, setStage] = useState('intro')
   const [current, setCurrent] = useState(0)
   const [answers, setAnswers] = useState(() => {
-    try { return JSON.parse(sessionStorage.getItem('otimiza-diagnostic') || '{}') } catch { return {} }
+    try { return JSON.parse(sessionStorage.getItem(storageKey) || '{}') } catch { return {} }
   })
   const [contact, setContact] = useState(initialContact)
   const [error, setError] = useState('')
 
   useEffect(() => {
-    sessionStorage.setItem('otimiza-diagnostic', JSON.stringify(answers))
-  }, [answers])
+    sessionStorage.setItem(storageKey, JSON.stringify(answers))
+  }, [answers, storageKey])
 
   const score = useMemo(() => Object.values(answers).reduce((sum, answer) => sum + (answer?.points || 0), 0), [answers])
-  const result = getResult(score)
-  const primaryFocus = answers.landing?.points >= 2 ? 'Landing page e conversão' : (answers.bottleneck?.label || 'Mapeamento operacional')
+  const result = active.getResult(score)
+  const primaryFocus = active.primaryFocus(answers)
   const progress = stage === 'questions' ? ((current + 1) / questions.length) * 100 : stage === 'capture' ? 100 : 0
 
   function chooseAnswer(label, points) {
@@ -136,15 +275,15 @@ export default function DiagnosticQuiz() {
     setContact(initialContact)
     setCurrent(0)
     setStage('intro')
-    sessionStorage.removeItem('otimiza-diagnostic')
+    sessionStorage.removeItem(storageKey)
   }
 
   return (
-    <section className="diagnostic" id="diagnostico">
+    <section className="diagnostic" id={anchorId || 'diagnostico'}>
       <div className="container diagnostic-layout">
         <div className="diagnostic-copy">
-          <h2>Onde sua empresa pode destravar operação e crescimento?</h2>
-          <p>Responda seis perguntas. Você recebe um score de oportunidade e descobre se o melhor ponto de partida é uma landing page, um sistema ou uma automação.</p>
+          <h2>{active.heading}</h2>
+          <p>{active.description}</p>
           <ul>
             <li><span><CheckIcon /></span> Resultado imediato</li>
             <li><span><CheckIcon /></span> Recomendação personalizada</li>
@@ -166,8 +305,8 @@ export default function DiagnosticQuiz() {
                 <span className="quiz-symbol">
                   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2" /></svg>
                 </span>
-                <h3>Diagnóstico gratuito de operação e crescimento</h3>
-                <p>Identifique o maior gargalo da rotina ou da captação de contatos e descubra o melhor primeiro passo.</p>
+                <h3>{active.introTitle}</h3>
+                <p>{active.introText}</p>
                 <button className="button" type="button" onClick={() => setStage('questions')}>Iniciar diagnóstico</button>
                 <small>Cerca de 2 minutos · respostas confidenciais</small>
               </motion.div>

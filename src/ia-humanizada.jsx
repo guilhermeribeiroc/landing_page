@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import './ia-humanizada.css'
+import DiagnosticQuiz from './components/DiagnosticQuiz'
 
 const Arrow = () => <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
 
@@ -48,16 +49,16 @@ function AiHumanizadaPage() {
             <p className="ai-kicker"><i /> IA PARA ATENDIMENTO, VENDAS E OPERAÇÃO</p>
             <h1>A IA responde. <strong>O contexto decide.</strong></h1>
             <p>Uma assistente que conversa com seus clientes, consulta as informações certas e ajuda sua equipe a não perder contatos, mesmo fora do horário comercial.</p>
-            <a className="button ai-hero-button" href="#avaliar">Quero avaliar uma IA <Arrow /></a>
+            <a className="button ai-hero-button" href="#avaliar">Fazer diagnóstico <Arrow /></a>
             <small>Você define o tom, o que ela pode fazer e quando chama alguém da equipe.</small>
           </div>
           <ChatScene />
         </div>
       </section>
 
-      <section className="ai-intro"><div className="container ai-intro-grid">
-        <p className="ai-kicker">O QUE SIGNIFICA HUMANIZADA</p>
-        <div><h2>Não segue um roteiro engessado.</h2><p>Ela entende o assunto da conversa, usa as informações permitidas da empresa e encaminha o que precisa para a pessoa certa.</p></div>
+      <section className="ai-intro"><div className="container ai-section-head ai-section-head--split">
+        <div><p className="ai-kicker"><i /> O QUE SIGNIFICA HUMANIZADA</p><h2>Não segue um roteiro engessado.</h2></div>
+        <p>Ela entende o assunto da conversa, usa as informações permitidas da empresa e encaminha o que precisa para a pessoa certa.</p>
       </div></section>
 
       <section className="ai-personality"><div className="container"><div className="ai-section-head ai-section-head--split"><div><p className="ai-kicker">PERSONALIDADE DEFINIDA POR VOCÊ</p><h2>Você define como ela atende.</h2></div><p>Nome, função, tom de voz e limites ficam de acordo com a sua empresa. O atendimento pode ser mais próximo, direto, comercial ou técnico.</p></div><div className="ai-personality-grid">
@@ -68,6 +69,7 @@ function AiHumanizadaPage() {
 
       <section className="ai-comparison"><div className="container"><div className="ai-section-head"><p className="ai-kicker">A DIFERENÇA NA PRÁTICA</p><h2>O atendimento muda quando a conversa tem contexto.</h2></div><div className="ai-compare-grid">
         <article className="ai-compare-card ai-compare-card--common"><div className="ai-compare-label"><p>CHATBOT GENÉRICO</p><span>LIMITADO</span></div><h3>Responde.<br />Mas não resolve.</h3><div className="ai-compare-demo ai-compare-demo--common"><div className="ai-compare-wa-head"><i>◔</i><span><b>Atendimento automático</b><small>online agora</small></span><strong>⋮</strong></div><div className="ai-compare-wa-body"><p className="ai-compare-wa-message ai-compare-wa-message--in">Preciso de ajuda com meu caso.</p><p className="ai-compare-wa-message ai-compare-wa-message--out">Olá! Escolha uma opção:<br /><span>1 · Preços</span><br /><span>2 · Horários</span><br /><span>3 · Falar com suporte</span></p></div></div><ul><li>Só responde o que já está no menu</li><li>Não consulta histórico ou prioridade</li><li>Passa o contato quando a conversa sai do roteiro</li></ul></article>
+        <div className="ai-compare-vs" aria-hidden="true">VS</div>
         <article className="ai-compare-card ai-compare-card--human"><div className="ai-compare-label"><p>IA HUMANIZADA OTIMIZA</p><span>EM AÇÃO</span></div><h3>Entende.<br />E faz avançar.</h3><div className="ai-compare-demo ai-compare-demo--human"><div className="ai-compare-wa-head"><i>◔</i><span><b>Alice · Assistente virtual</b><small>online agora</small></span><strong>⋮</strong></div><div className="ai-compare-wa-body"><p className="ai-compare-wa-message ai-compare-wa-message--in">Estamos perdendo contatos fora do horário.</p><p className="ai-compare-wa-message ai-compare-wa-message--out">Entendi, Mariana. Já registrei seu interesse.</p><p className="ai-compare-wa-message ai-compare-wa-message--out">Posso sugerir um horário para nossa equipe conversar com você?</p></div></div><ul><li>Entende o assunto e o histórico</li><li>Consulta e registra dados da operação</li><li>Agenda e chama o humano quando precisa</li></ul></article>
       </div></div></section>
 
@@ -77,11 +79,11 @@ function AiHumanizadaPage() {
         <article><span className="ai-integration-icon ai-integration-icon--human">03</span><h3>Humano no momento certo</h3><p>Quando o caso pede atenção, a conversa chega à pessoa certa com o contexto necessário.</p></article>
       </div></div></section>
 
-      <section className="ai-always"><div className="container ai-always-grid"><div><p className="ai-kicker">DISPONÍVEL, MAS COM LIMITES</p><h2>Atende quando você não está. Sem passar dos limites.</h2><p>Ela pode responder fora do horário, confirmar que recebeu o contato e deixar o próximo passo preparado. As regras da sua operação continuam valendo.</p></div><div className="ai-hours"><header><div><p>FORA DO EXPEDIENTE</p><span>22:14</span></div><b>Uma cliente entra em contato.</b></header><div className="ai-hours-chat"><p className="ai-hours-message ai-hours-message--in">Olá! Quero marcar uma consulta.</p><p className="ai-hours-message ai-hours-message--out">Olá! Posso encontrar um horário para você agora.</p></div><div className="ai-hours-results"><div><i>✓</i><span>Cliente atendida na hora</span></div><div><i>✓</i><span>Contato salvo no CRM</span></div><div><i>✓</i><span>Horário sugerido para a equipe</span></div></div></div></div></section>
+      <section className="ai-always"><div className="container ai-always-grid"><div><p className="ai-kicker">DISPONÍVEL, MAS COM LIMITES</p><h2>Atende quando você não está. Sem passar dos limites.</h2><p>Ela pode responder fora do horário, confirmar que recebeu o contato e deixar o próximo passo preparado. As regras da sua operação continuam valendo.</p></div><div className="ai-hours"><header><div><p>FORA DO EXPEDIENTE</p><span>22:14</span></div><b>Uma cliente manda mensagem às 22:14.</b></header><div className="ai-hours-chat"><p className="ai-hours-message ai-hours-message--in">Olá! Quero marcar uma consulta.</p><p className="ai-hours-message ai-hours-message--out">Olá! Posso encontrar um horário para você agora.</p></div><div className="ai-hours-results"><div><i>✓</i><span>Cliente atendida na hora</span></div><div><i>✓</i><span>Contato salvo no CRM</span></div><div><i>✓</i><span>Horário sugerido para a equipe</span></div></div></div></div></section>
 
       <section className="ai-case"><div className="container ai-case-grid"><div className="ai-case-copy"><p className="ai-kicker">EXEMPLO: ESCRITÓRIO DE ADVOCACIA</p><h2>Da primeira dúvida à contratação, sem deixar o interesse esfriar.</h2><p>Uma pessoa chama à noite. A IA entende a área de interesse, faz as perguntas permitidas, registra o caso e apresenta o próximo passo.</p><p>Com regras comerciais aprovadas, ela pode conduzir a conversa até a proposta e a assinatura. Questões jurídicas e decisões sensíveis continuam com a equipe.</p></div><ol className="ai-case-steps"><li><span>01</span><div><b>Entende a necessidade</b><p>Identifica o tipo de atendimento e faz as perguntas iniciais.</p></div></li><li><span>02</span><div><b>Organiza o próximo passo</b><p>Registra o interesse, consulta a agenda e sugere uma conversa.</p></div></li><li><span>03</span><div><b>Conduz a contratação</b><p>Apresenta informações comerciais aprovadas e acompanha a assinatura.</p></div></li><li><span>04</span><div><b>Chama o especialista</b><p>Encaminha ao humano quando o caso exige análise ou decisão.</p></div></li></ol></div></section>
 
-      <section className="ai-cta" id="avaliar"><div className="container"><div className="ai-cta-box ai-cta-box--assessment"><div><p className="ai-kicker">ANTES DE CONVERSAR</p><h2>Sua operação perde oportunidades no atendimento?</h2><p>Se você respondeu sim a alguma destas perguntas, temos algo para conversar.</p></div><div className="ai-cta-assessment"><ol><li><span>01</span><p>Clientes chamam fora do horário e ficam sem resposta?</p></li><li><span>02</span><p>O time repete respostas ou procura informações em várias ferramentas?</p></li><li><span>03</span><p>Leads, agendamentos ou retornos acabam sem acompanhamento?</p></li></ol><a href="https://wa.me/558888557247?text=Olá!%20Quero%20responder%20às%20perguntas%20e%20entender%20se%20uma%20IA%20humanizada%20faz%20sentido%20para%20minha%20operação." target="_blank" rel="noopener noreferrer" className="button">Quero responder as perguntas <Arrow /></a><small>Conversa inicial pelo WhatsApp, sem compromisso.</small></div></div></div></section>
+      <DiagnosticQuiz variant="atendimento" anchorId="avaliar" />
     </main>
     <footer className="ai-footer"><div className="container"><Mark /><span>Tecnologia pensada para a sua operação.</span></div></footer>
   </div>
