@@ -85,5 +85,7 @@
 /* Cabeçalhos e bolhas seguem o fluxo vertical de uma conversa real. */
 .ai-phone .ai-whatsapp-chat { display: flex; flex-direction: column; align-items: flex-start; }
 .ai-phone .wa-message--outgoing { align-self: flex-end; }.ai-phone .wa-typing { align-self: flex-start; }
-.ai-compare-wa-head b { display: block; margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; color: inherit; font-size: .48rem; line-height: 1; }.ai-compare-wa-head small { display: block; margin: 0; padding: 0; }
-.ai-compare-wa-body { display: flex; flex-direction: column; align-items: flex-start; }.ai-compare-wa-message, .ai-compare-wa-menu { flex: 0 0 auto; }.ai-compare-wa-message--out { align-self: flex-end; }
+.ai-compare-wa-head { flex-wrap: nowrap; }.ai-compare-demo .ai-compare-wa-head > span { display: grid; gap: 0; margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; }.ai-compare-wa-head b { display: block; margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; color: inherit; font-size: .56rem; line-height: 1; }.ai-compare-wa-head small { display: block; margin: 2px 0 0; padding: 0; font-size: .42rem; }
+.ai-compare-wa-body { display: flex; flex-flow: column nowrap; align-items: flex-start; }.ai-compare-wa-message, .ai-compare-wa-menu { flex: 0 0 auto; }.ai-compare-wa-message--out { align-self: flex-end; }.ai-compare-wa-message--out > span { color: #456d62; font-size: .42rem; line-height: 1.5; }
+.ai-compare-demo .ai-compare-wa-message > span { display: inline; margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; }
+.ai-compare-demo--common .ai-compare-wa-message--out > span { color: #456d62; }
