@@ -10,7 +10,7 @@ function Mark() {
 }
 
 function ChatScene() {
-  return <div className="ai-chat-scene ai-whatsapp" aria-label="Exemplo de conversa no WhatsApp com IA">
+  return <div className="ai-phone" aria-label="Exemplo de conversa no WhatsApp com IA"><div className="ai-phone-speaker" /><div className="ai-chat-scene ai-whatsapp">
     <div className="ai-whatsapp-head"><div><i>◔</i><span><b>Alice · Assistente virtual</b><small>online agora</small></span></div><strong>⋮</strong></div>
     <div className="ai-whatsapp-chat">
       <div className="wa-message wa-message--incoming">Olá! Gostaria de entender como vocês podem ajudar meu escritório.<time>22:14</time></div>
@@ -20,13 +20,18 @@ function ChatScene() {
       <div className="wa-typing"><i /><i /><i /> Alice está digitando</div>
     </div>
     <div className="ai-whatsapp-input">Mensagem <span>➤</span></div>
-  </div>
+  </div><div className="ai-phone-home" /></div>
 }
 
 function CrmScene() {
   return <div className="ai-crm-scene" aria-label="Exemplo de painel CRM atualizado pela IA">
-    <div className="ai-crm-browser"><i /><i /><i /><span>crm.suaempresa.com</span><b>Atualizado agora</b></div>
-    <div className="ai-crm-body"><aside><strong>CRM</strong><span className="active">⌂</span><span>◉</span><span>▣</span><span>◫</span></aside><main><header><div><small>LEADS / NOVO CONTATO</small><h3>Mariana Costa</h3><p>Escritório de advocacia · veio do WhatsApp</p></div><b>Novo lead</b></header><div className="ai-crm-content"><section className="ai-crm-profile"><div className="ai-crm-avatar">MC</div><div><strong>Interesse identificado</strong><p>IA para atendimento e qualificação</p></div><ul><li><span>Origem</span><b>WhatsApp</b></li><li><span>Responsável</span><b>Comercial</b></li><li><span>Próxima ação</span><b>Agendar conversa</b></li></ul></section><section className="ai-crm-timeline"><p>ATIVIDADES</p><div><i /> <span><b>22:15 · IA registrou o contato</b><small>Interesse e contexto salvos no CRM</small></span></div><div><i /> <span><b>22:15 · Tarefa criada para o time</b><small>Retomar atendimento no próximo horário</small></span></div><div><i /> <span><b>22:16 · Agenda consultada</b><small>Horários disponíveis encontrados</small></span></div></section></div></main></div>
+    <div className="ai-crm-browser"><i /><i /><i /><span>crm.suaempresa.com</span><b>VISÃO DA OPERAÇÃO · EXEMPLO</b></div>
+    <div className="ai-crm-dashboard"><div className="ai-crm-overview"><section className="crm-chart"><p>Novos contatos</p><div><i /><i /><i /><i /><i /></div><small>SEG &nbsp; TER &nbsp; QUA &nbsp; QUI &nbsp; SEX</small></section><section className="crm-rate"><span>68%</span><p>Oportunidades em avanço</p></section><section className="crm-stat"><b>53</b><p>Tarefas em andamento <em>→</em></p></section><section className="crm-stat"><b>R$ 18.400</b><p>Propostas acompanhadas <em>→</em></p></section></div><div className="ai-crm-pipeline">
+      <section><header><h3>Novos contatos</h3><span>12</span></header><article><b>Mariana Costa</b><p>Escritório Costa & Lima</p><small>WhatsApp · agora</small><footer>IA qualificou <span>↗</span></footer></article><article><b>Rafael Mendes</b><p>Grupo Veritas</p><small>Landing page · 12 min</small><footer>Nova oportunidade <span>↗</span></footer></article></section>
+      <section><header><h3>Qualificação</h3><span>07</span></header><article><b>Patrícia Rocha</b><p>Rocha Consultoria</p><small>WhatsApp · hoje</small><footer>Reunião sugerida <span>↗</span></footer></article><article><b>Lucas Nunes</b><p>Nunes Advocacia</p><small>Site · hoje</small><footer>Dados completos <span>↗</span></footer></article></section>
+      <section><header><h3>Proposta enviada</h3><span>04</span></header><article className="crm-card--focus"><b>Marcos Vieira</b><p>Vieira & Associados</p><small>Automação comercial</small><footer>Assinatura acompanhada <span>↗</span></footer></article><article><b>Bianca Torres</b><p>Clínica Horizonte</p><small>Sistema sob medida</small><footer>Retorno agendado <span>↗</span></footer></article></section>
+      <section><header><h3>Contrato fechado</h3><span>09</span></header><article><b>Almeida Jurídico</b><p>Implantação confirmada</p><small>Hoje · 10:24</small><footer>Onboarding criado <span>✓</span></footer></article><article><b>Valle Saúde</b><p>Reunião de início marcada</p><small>Amanhã · 09:00</small><footer>Agenda sincronizada <span>✓</span></footer></article></section>
+    </div></div>
   </div>
 }
 
