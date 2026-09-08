@@ -5,7 +5,7 @@ const questions = [
   },
   {
     question: 'Quanto tempo leva para implementar uma automação?',
-    answer: 'Depende da quantidade de etapas, ferramentas e integrações envolvidas. Depois do diagnóstico e do mapeamento, definimos o escopo e apresentamos uma estimativa adequada ao processo.',
+    answer: 'Em média, a implantação leva de uma a três semanas. O prazo pode variar conforme a quantidade de etapas, ferramentas e integrações envolvidas; depois do diagnóstico, alinhamos o escopo e o cronograma do processo.',
   },
   {
     question: 'Como os dados da empresa são protegidos?',
@@ -13,7 +13,7 @@ const questions = [
   },
   {
     question: 'Minha equipe terá dificuldade para se adaptar?',
-    answer: 'A automação é desenhada sobre a lógica da operação e deve simplificar tarefas existentes. O fluxo é validado com os responsáveis e ajustado antes da adoção definitiva.',
+    answer: 'Não. Além de desenhar a solução sobre a lógica da operação, fazemos um treinamento com a equipe para que todos entendam o novo fluxo e consigam usar a ferramenta com segurança no dia a dia.',
   },
 ]
 
