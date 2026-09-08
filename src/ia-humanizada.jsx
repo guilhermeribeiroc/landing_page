@@ -15,10 +15,11 @@ function ChatScene() {
     <div className="ai-whatsapp-chat">
       <div className="wa-message wa-message--incoming">Olá! Sou a Camila, cliente nova. Gostaria de marcar uma consulta com dermatologista.<time>22:14</time></div>
       <div className="wa-message wa-message--outgoing">Claro, Camila! Temos a Dra. Marina Lopes e o Dr. André Silva. Você tem preferência?<time>22:14 ✓✓</time></div>
-      <div className="wa-message wa-message--incoming">Pode ser com a Dra. Marina, por favor.<time>22:15</time></div>
-      <div className="wa-message wa-message--outgoing">Consultei a agenda: ela atende quinta às 16h. Posso confirmar para você?<time>22:15 ✓✓</time></div>
-      <div className="wa-message wa-message--incoming">Sim, esse horário é ótimo.<time>22:16</time></div>
-      <div className="wa-message wa-message--outgoing">Pronto, consulta confirmada com a Dra. Marina. Obrigada, Camila!<time>22:16 ✓✓</time></div>
+      <div className="wa-message wa-message--incoming">Pode ser com a Dra. Marina. Quero marcar na terça, dia 17.<time>22:15</time></div>
+      <div className="wa-message wa-message--outgoing">Perfeito! Vou conferir a agenda dela para terça, dia 17.<time>22:15 ✓✓</time></div>
+      <div className="wa-message wa-message--outgoing">Nesse dia, temos 9h, 14h ou 16h30. Qual horário você prefere?<time>22:15 ✓✓</time></div>
+      <div className="wa-message wa-message--incoming">16h30, por favor.<time>22:16</time></div>
+      <div className="wa-message wa-message--outgoing">Pronto! Consulta confirmada com a Dra. Marina, terça às 16h30. Obrigada, Camila!<time>22:16 ✓✓</time></div>
     </div>
     <div className="ai-whatsapp-input">Mensagem <span>➤</span></div>
   </div><div className="ai-phone-home" /></div>
