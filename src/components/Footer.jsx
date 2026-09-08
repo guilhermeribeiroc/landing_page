@@ -31,7 +31,7 @@ export default function Footer() {
 
           <div className="footer-col">
             <h4>Contato</h4>
-            <a href="mailto:contato@useotimiza.com.br">contato@useotimiza.com.br</a>
+            <a href="mailto:contato@otimizai.net.br">contato@otimizai.net.br</a>
             <a href="https://wa.me/558888557247?text=Ol%C3%A1!%20Vi%20o%20site%20da%20OtimizaA%C3%8D%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20suas%20solu%C3%A7%C3%B5es%20tecnol%C3%B3gicas." target="_blank" rel="noopener noreferrer">WhatsApp</a>
             <a href="https://instagram.com/otimizaii" target="_blank" rel="noopener noreferrer">Instagram</a>
           </div>
