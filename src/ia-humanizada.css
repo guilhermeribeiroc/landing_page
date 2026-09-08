@@ -59,6 +59,10 @@
 .ai-phone-button { position: absolute; z-index: 5; display: block; width: 3px; border-radius: 3px 0 0 3px; background: linear-gradient(90deg, #4d6269, #c3d1d1); box-shadow: 0 1px rgba(255,255,255,.35); }.ai-phone-button--silent { top: 106px; left: -3px; height: 21px; }.ai-phone-button--volume-up { top: 146px; left: -3px; height: 35px; }.ai-phone-button--volume-down { top: 191px; left: -3px; height: 35px; }.ai-phone-button--power { top: 151px; right: -3px; height: 58px; border-radius: 0 3px 3px 0; }
 .ai-phone--iphone .ai-phone-home { position: relative; z-index: 4; width: 104px; height: 4px; background: #f2fbfa; box-shadow: 0 1px 5px rgba(255,255,255,.2); }
 
+/* Moldura limpa: sem ilha dinâmica sobre o conteúdo da conversa. */
+.ai-phone--iphone::before, .ai-phone--iphone .ai-phone-speaker { display: none; }
+.ai-phone--iphone .ai-whatsapp-head { padding-top: 11px; }
+
 /* Proporção física de iPhone (9:19,5), não apenas uma moldura decorativa. */
 .ai-phone--iphone { width: min(100%, 350px); aspect-ratio: 9 / 19.5; box-sizing: border-box; display: flex; flex-direction: column; }
 .ai-phone--iphone .ai-whatsapp { display: grid; grid-template-rows: 64px minmax(0, 1fr) 45px; flex: 1; min-height: 0; }
