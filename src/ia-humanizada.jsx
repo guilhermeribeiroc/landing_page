@@ -10,11 +10,23 @@ function Mark() {
 }
 
 function ChatScene() {
-  return <div className="ai-chat-scene" aria-label="Exemplo de atendimento com IA">
-    <div className="ai-scene-top"><span><i /> Atendimento ativo</span><small>22:14</small></div>
-    <div className="ai-message ai-message--incoming"><b>Visitante</b><p>Preciso entender como funciona para meu escritório.</p></div>
-    <div className="ai-message ai-message--assistant"><b>IA da empresa</b><p>Posso ajudar. Vou entender seu contexto e sugerir o próximo passo.</p></div>
-    <div className="ai-scene-actions"><span>CRM atualizado</span><span>Agenda disponível</span><span>Humano quando necessário</span></div>
+  return <div className="ai-chat-scene ai-whatsapp" aria-label="Exemplo de conversa no WhatsApp com IA">
+    <div className="ai-whatsapp-head"><div><i>◔</i><span><b>Alice · Assistente virtual</b><small>online agora</small></span></div><strong>⋮</strong></div>
+    <div className="ai-whatsapp-chat">
+      <div className="wa-message wa-message--incoming">Olá! Gostaria de entender como vocês podem ajudar meu escritório.<time>22:14</time></div>
+      <div className="wa-message wa-message--outgoing">Olá, Mariana! Sou a Alice, assistente virtual da Otimiza. Posso fazer algumas perguntas rápidas para direcionar você? <time>22:14 ✓✓</time></div>
+      <div className="wa-message wa-message--incoming">Claro. Estamos perdendo muitos contatos fora do horário.<time>22:15</time></div>
+      <div className="wa-message wa-message--outgoing">Entendi. Já registrei seu interesse e posso sugerir uma conversa com nossa equipe no melhor horário para você.<time>22:15 ✓✓</time></div>
+      <div className="wa-typing"><i /><i /><i /> Alice está digitando</div>
+    </div>
+    <div className="ai-whatsapp-input">Mensagem <span>➤</span></div>
+  </div>
+}
+
+function CrmScene() {
+  return <div className="ai-crm-scene" aria-label="Exemplo de painel CRM atualizado pela IA">
+    <div className="ai-crm-browser"><i /><i /><i /><span>crm.suaempresa.com</span><b>Atualizado agora</b></div>
+    <div className="ai-crm-body"><aside><strong>CRM</strong><span className="active">⌂</span><span>◉</span><span>▣</span><span>◫</span></aside><main><header><div><small>LEADS / NOVO CONTATO</small><h3>Mariana Costa</h3><p>Escritório de advocacia · veio do WhatsApp</p></div><b>Novo lead</b></header><div className="ai-crm-content"><section className="ai-crm-profile"><div className="ai-crm-avatar">MC</div><div><strong>Interesse identificado</strong><p>IA para atendimento e qualificação</p></div><ul><li><span>Origem</span><b>WhatsApp</b></li><li><span>Responsável</span><b>Comercial</b></li><li><span>Próxima ação</span><b>Agendar conversa</b></li></ul></section><section className="ai-crm-timeline"><p>ATIVIDADES</p><div><i /> <span><b>22:15 · IA registrou o contato</b><small>Interesse e contexto salvos no CRM</small></span></div><div><i /> <span><b>22:15 · Tarefa criada para o time</b><small>Retomar atendimento no próximo horário</small></span></div><div><i /> <span><b>22:16 · Agenda consultada</b><small>Horários disponíveis encontrados</small></span></div></section></div></main></div>
   </div>
 }
 
@@ -52,7 +64,7 @@ function AiHumanizadaPage() {
         <article className="ai-compare-card ai-compare-card--human"><p>IA HUMANIZADA</p><h3>Entende o cenário e encaminha.</h3><ul><li>Interpreta a intenção da pessoa</li><li>Registra e consulta dados no CRM</li><li>Agenda o próximo passo no calendário</li><li>Encaminha para o humano com contexto</li></ul></article>
       </div></div></section>
 
-      <section className="ai-integrations"><div className="container"><div className="ai-section-head ai-section-head--split"><div><p className="ai-kicker">CONECTADA À OPERAÇÃO</p><h2>Uma conversa pode mover o negócio inteiro.</h2></div><p>Em vez de responder e esquecer, a IA transforma cada interação em uma ação registrada, acompanhável e pronta para o time continuar.</p></div><div className="ai-integration-grid">
+      <section className="ai-integrations"><div className="container"><div className="ai-section-head ai-section-head--split"><div><p className="ai-kicker">CONECTADA À OPERAÇÃO</p><h2>Uma conversa pode mover o negócio inteiro.</h2></div><p>Em vez de responder e esquecer, a IA transforma cada interação em uma ação registrada, acompanhável e pronta para o time continuar.</p></div><CrmScene /><div className="ai-integration-grid">
         <article><span className="ai-integration-icon ai-integration-icon--crm">01</span><h3>CRM atualizado</h3><p>Identifica contatos, registra interesses e mantém o histórico disponível para a próxima conversa.</p></article>
         <article><span className="ai-integration-icon ai-integration-icon--calendar">02</span><h3>Google Calendar integrado</h3><p>Consulta horários, agenda reuniões e envia confirmações sem depender de troca manual de mensagens.</p></article>
         <article><span className="ai-integration-icon ai-integration-icon--human">03</span><h3>Humano no momento certo</h3><p>Quando existe exceção, negociação sensível ou necessidade de decisão, a conversa chega à pessoa certa com todo o contexto.</p></article>
