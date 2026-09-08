@@ -8,7 +8,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: new URL('./index.html', import.meta.url).pathname,
-        iaHumanizada: new URL('./ia-humanizada.html', import.meta.url).pathname,
+        iaHumanizada: new URL('./ia-humanizada/index.html', import.meta.url).pathname,
+        diagnostico: new URL('./diagnostico/index.html', import.meta.url).pathname,
       },
     },
   },

@@ -4,10 +4,13 @@ import './index.css'
 import './ia-humanizada.css'
 import DiagnosticQuiz from './components/DiagnosticQuiz'
 
+const base = import.meta.env.BASE_URL
+
 const Arrow = () => <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+const ArrowUpRight = () => <svg className="crm-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" /></svg>
 
 function Mark() {
-  return <a className="ai-logo" href="index.html" aria-label="Voltar para a Otimiza AI"><img src={`${import.meta.env.BASE_URL}otimiza-mark-transparent.png`} alt="" /><span>Otimiza<span>AI</span></span></a>
+  return <a className="ai-logo" href={base} aria-label="Voltar para a Otimiza AI"><img src={`${base}otimiza-mark-transparent.png`} alt="" /><span>Otimiza<span>AI</span></span></a>
 }
 
 function ChatScene() {
@@ -30,9 +33,9 @@ function CrmScene() {
   return <div className="ai-crm-scene" aria-label="Exemplo de painel CRM atualizado pela IA">
     <div className="ai-crm-browser"><i /><i /><i /><span>crm.suaempresa.com</span><b>VISÃO DA OPERAÇÃO · EXEMPLO</b></div>
     <div className="ai-crm-dashboard"><div className="ai-crm-overview"><section className="crm-chart"><p>Novos contatos</p><div><i /><i /><i /><i /><i /></div><small>SEG &nbsp; TER &nbsp; QUA &nbsp; QUI &nbsp; SEX</small></section><section className="crm-rate"><span>68%</span><p>Oportunidades em avanço</p></section><section className="crm-stat"><b>53</b><p>Tarefas em andamento <em>→</em></p></section><section className="crm-stat"><b>R$ 18.400</b><p>Propostas acompanhadas <em>→</em></p></section></div><div className="ai-crm-pipeline">
-      <section><header><h3>Novos contatos</h3><span>12</span></header><article><b>Mariana Costa</b><p>Escritório Costa & Lima</p><small>WhatsApp · agora</small><footer>IA qualificou <span>↗</span></footer></article><article><b>Rafael Mendes</b><p>Grupo Veritas</p><small>Landing page · 12 min</small><footer>Nova oportunidade <span>↗</span></footer></article></section>
-      <section><header><h3>Qualificação</h3><span>07</span></header><article><b>Patrícia Rocha</b><p>Rocha Consultoria</p><small>WhatsApp · hoje</small><footer>Reunião sugerida <span>↗</span></footer></article><article><b>Lucas Nunes</b><p>Nunes Advocacia</p><small>Site · hoje</small><footer>Dados completos <span>↗</span></footer></article></section>
-      <section><header><h3>Proposta enviada</h3><span>04</span></header><article className="crm-card--focus"><b>Marcos Vieira</b><p>Vieira & Associados</p><small>Automação comercial</small><footer>Assinatura acompanhada <span>↗</span></footer></article><article><b>Bianca Torres</b><p>Clínica Horizonte</p><small>Sistema sob medida</small><footer>Retorno agendado <span>↗</span></footer></article></section>
+      <section><header><h3>Novos contatos</h3><span>12</span></header><article><b>Mariana Costa</b><p>Escritório Costa & Lima</p><small>WhatsApp · agora</small><footer>IA qualificou <ArrowUpRight /></footer></article><article><b>Rafael Mendes</b><p>Grupo Veritas</p><small>Landing page · 12 min</small><footer>Nova oportunidade <ArrowUpRight /></footer></article></section>
+      <section><header><h3>Qualificação</h3><span>07</span></header><article><b>Patrícia Rocha</b><p>Rocha Consultoria</p><small>WhatsApp · hoje</small><footer>Reunião sugerida <ArrowUpRight /></footer></article><article><b>Lucas Nunes</b><p>Nunes Advocacia</p><small>Site · hoje</small><footer>Dados completos <ArrowUpRight /></footer></article></section>
+      <section><header><h3>Proposta enviada</h3><span>04</span></header><article className="crm-card--focus"><b>Marcos Vieira</b><p>Vieira & Associados</p><small>Automação comercial</small><footer>Assinatura acompanhada <ArrowUpRight /></footer></article><article><b>Bianca Torres</b><p>Clínica Horizonte</p><small>Sistema sob medida</small><footer>Retorno agendado <ArrowUpRight /></footer></article></section>
       <section><header><h3>Contrato fechado</h3><span>09</span></header><article><b>Almeida Jurídico</b><p>Implantação confirmada</p><small>Hoje · 10:24</small><footer>Onboarding criado <span>✓</span></footer></article><article><b>Valle Saúde</b><p>Reunião de início marcada</p><small>Amanhã · 09:00</small><footer>Agenda sincronizada <span>✓</span></footer></article></section>
     </div></div>
   </div>
@@ -40,7 +43,7 @@ function CrmScene() {
 
 function AiHumanizadaPage() {
   return <div className="ai-page">
-    <header className="ai-header"><div className="container ai-header-inner"><Mark /><a href="index.html" className="ai-back">← Voltar para a Otimiza</a></div></header>
+    <header className="ai-header"><div className="container ai-header-inner"><Mark /><a href={base} className="ai-back">← Voltar para a Otimiza</a></div></header>
     <main>
       <section className="ai-hero">
         <div className="ai-orb ai-orb--one" /><div className="ai-orb ai-orb--two" />

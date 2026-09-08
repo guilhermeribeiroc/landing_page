@@ -34,8 +34,9 @@ export default function Hero() {
                 Ver soluções
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6" /></svg>
               </a>
-              <a href="ia-humanizada.html" className="hero-ai-link">
-                Conheça a IA humanizada <span aria-hidden="true">↗</span>
+              <a href={`${import.meta.env.BASE_URL}ia-humanizada/`} className="hero-ai-link">
+                Conheça a IA humanizada
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" /></svg>
               </a>
             </motion.div>
             <motion.p className="hero-note" variants={fadeUp} custom={3}>
