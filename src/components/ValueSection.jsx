@@ -52,7 +52,14 @@ function SolutionVisual({ type }) {
     return <div className="solution-preview solution-preview--system" aria-hidden="true"><div className="preview-browser"><i /><i /><i /><span>painel.suaempresa</span></div><div className="preview-dashboard"><aside><i /><i /><i /></aside><div><header><span /><b>Visão da operação</b><em>Hoje</em></header><section><span><small>Pendências</small><b>Organizadas</b></span><i /><i /><i /></section><footer><b>Processos</b><span>Atualizado agora</span></footer></div></div></div>
   }
 
-  return <div className="solution-preview solution-preview--automation" aria-hidden="true"><div className="automation-path"><div><i className="dot dot--source" /><span>Novo contato</span></div><b>↓</b><div><i className="dot dot--process" /><span>Qualificar lead</span></div><b>↓</b><div><i className="dot dot--result" /><span>Equipe avisada</span></div></div><p>O processo continua — mesmo quando você não está olhando.</p></div>
+  return <div className="solution-preview solution-preview--automation" aria-hidden="true">
+    <div className="automation-preview-head"><span><i /> Atividade recente</span><b>Automático</b></div>
+    <div className="automation-activity">
+      <div><time>14:32</time><i className="activity-icon activity-icon--lead" /><p><strong>Novo lead recebido</strong><small>Formulário de contato</small></p><em>✓</em></div>
+      <div><time>14:32</time><i className="activity-icon activity-icon--crm" /><p><strong>Cadastro criado no CRM</strong><small>Dados salvos com histórico</small></p><em>✓</em></div>
+      <div><time>14:33</time><i className="activity-icon activity-icon--team" /><p><strong>Equipe responsável avisada</strong><small>Próxima ação para hoje</small></p><em>✓</em></div>
+    </div>
+  </div>
 }
 
 const comparison = {
