@@ -11,7 +11,7 @@ function Mark() {
 
 function ChatScene() {
   return <div className="ai-phone ai-phone--iphone" aria-label="Exemplo de conversa no WhatsApp com IA"><span className="ai-phone-button ai-phone-button--silent" /><span className="ai-phone-button ai-phone-button--volume-up" /><span className="ai-phone-button ai-phone-button--volume-down" /><span className="ai-phone-button ai-phone-button--power" /><div className="ai-phone-speaker" /><div className="ai-chat-scene ai-whatsapp">
-    <div className="ai-whatsapp-head"><div><i>◔</i><span><b>Camila · Cliente</b><small>online agora</small></span></div><strong>⋮</strong></div>
+    <div className="ai-whatsapp-head"><div><img className="ai-whatsapp-avatar" src="/camila-avatar.png" alt="Camila" /><span><b>Camila · Cliente</b><small>online agora</small></span></div><strong>⋮</strong></div>
     <div className="ai-whatsapp-chat">
       <div className="wa-message wa-message--incoming">Olá! Sou a Camila, cliente nova. Gostaria de marcar uma consulta com dermatologista.<time>22:14</time></div>
       <div className="wa-message wa-message--outgoing">Claro, Camila! Temos a Dra. Marina Lopes e o Dr. André Silva. Você tem preferência?<time>22:14 ✓✓</time></div>
