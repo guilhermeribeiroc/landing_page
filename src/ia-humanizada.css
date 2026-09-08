@@ -49,3 +49,12 @@
 
 @media (max-width: 820px) { .ai-phone { justify-self: start; }.ai-crm-dashboard { padding: 15px; }.ai-crm-overview { grid-template-columns: 1.12fr .9fr 1fr; }.ai-crm-overview > section:last-child { display: none; }.ai-crm-pipeline { grid-template-columns: repeat(4, 205px); overflow-x: auto; padding-bottom: 8px; } }
 @media (max-width: 560px) { .ai-phone { width: min(100%, 340px); margin-inline: auto; }.ai-phone .ai-whatsapp-chat { min-height: 350px; }.ai-crm-scene { margin-top: 44px; }.ai-crm-dashboard { padding: 12px; }.ai-crm-overview { grid-template-columns: 1.12fr .88fr; gap: 9px; }.ai-crm-overview > section { min-height: 105px; padding: 11px; }.ai-crm-overview > section:nth-child(3) { display: grid; }.crm-chart > div { gap: 5px; }.crm-chart small { font-size: .36rem; }.crm-rate::before { width: 93px; }.crm-rate span { font-size: 1.18rem; }.crm-stat b { font-size: 1rem; }.ai-crm-pipeline { grid-template-columns: repeat(4, 188px); gap: 10px; } }
+
+/* Moldura inspirada no iPhone: bordas em titânio, Dynamic Island e controles físicos. */
+.ai-phone--iphone { padding: 12px 7px 10px; border: 1px solid rgba(212, 244, 241, .45); border-radius: 48px; background: linear-gradient(110deg, #7b8b90 0%, #29383d 5%, #0b1215 15%, #26343a 50%, #8a9a9d 100%); box-shadow: 0 38px 74px rgba(0,0,0,.47), 10px 7px 19px rgba(0,0,0,.35), inset 1px 0 rgba(255,255,255,.48), inset -1px 0 rgba(255,255,255,.16); }
+.ai-phone--iphone::before { top: 9px; width: 111px; height: 29px; border-radius: 20px; background: #030608; box-shadow: inset 0 1px rgba(255,255,255,.06); }
+.ai-phone--iphone .ai-phone-speaker { top: 19px; width: 32px; height: 3px; background: #46555a; }
+.ai-phone--iphone .ai-whatsapp { border: 1px solid rgba(255,255,255,.12); border-radius: 36px; }
+.ai-phone--iphone .ai-whatsapp-head { padding-top: 15px; }
+.ai-phone-button { position: absolute; z-index: 5; display: block; width: 3px; border-radius: 3px 0 0 3px; background: linear-gradient(90deg, #4d6269, #c3d1d1); box-shadow: 0 1px rgba(255,255,255,.35); }.ai-phone-button--silent { top: 106px; left: -3px; height: 21px; }.ai-phone-button--volume-up { top: 146px; left: -3px; height: 35px; }.ai-phone-button--volume-down { top: 191px; left: -3px; height: 35px; }.ai-phone-button--power { top: 151px; right: -3px; height: 58px; border-radius: 0 3px 3px 0; }
+.ai-phone--iphone .ai-phone-home { position: relative; z-index: 4; width: 104px; height: 4px; background: #f2fbfa; box-shadow: 0 1px 5px rgba(255,255,255,.2); }

@@ -10,7 +10,7 @@ function Mark() {
 }
 
 function ChatScene() {
-  return <div className="ai-phone" aria-label="Exemplo de conversa no WhatsApp com IA"><div className="ai-phone-speaker" /><div className="ai-chat-scene ai-whatsapp">
+  return <div className="ai-phone ai-phone--iphone" aria-label="Exemplo de conversa no WhatsApp com IA"><span className="ai-phone-button ai-phone-button--silent" /><span className="ai-phone-button ai-phone-button--volume-up" /><span className="ai-phone-button ai-phone-button--volume-down" /><span className="ai-phone-button ai-phone-button--power" /><div className="ai-phone-speaker" /><div className="ai-chat-scene ai-whatsapp">
     <div className="ai-whatsapp-head"><div><i>◔</i><span><b>Alice · Assistente virtual</b><small>online agora</small></span></div><strong>⋮</strong></div>
     <div className="ai-whatsapp-chat">
       <div className="wa-message wa-message--incoming">Olá! Gostaria de entender como vocês podem ajudar meu escritório.<time>22:14</time></div>
