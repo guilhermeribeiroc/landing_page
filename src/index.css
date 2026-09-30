@@ -195,6 +195,12 @@ ul { list-style: none; }
 .diagnostic-copy li span { width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; background: var(--cyan-deep); color: white; }
 .diagnostic-copy li span svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
 .diagnostic-shell { min-height: 600px; background: var(--paper-pure); border-radius: var(--radius); box-shadow: 0 30px 70px rgba(7, 44, 46, 0.15); overflow: hidden; display: flex; flex-direction: column; }
+.diagnostic-callout { padding: 50px; justify-content: space-between; background: #0d2932; color: var(--text); box-shadow: none; }
+.diagnostic-callout-mark { display: inline-flex; align-items: center; min-height: 27px; padding: 0 10px; border-radius: 7px; background: rgba(39,221,197,0.12); color: var(--cyan-bright); font-size: 0.66rem; font-weight: 800; letter-spacing: 0.06em; }
+.diagnostic-callout h3 { max-width: 12ch; margin-top: 25px; font-family: var(--display); font-size: clamp(2rem, 3.4vw, 3.2rem); line-height: 1; letter-spacing: -0.035em; }
+.diagnostic-callout p { max-width: 49ch; margin-top: 19px; color: var(--text-muted); font-size: 0.91rem; line-height: 1.72; }
+.diagnostic-callout .button { width: fit-content; margin-top: 36px; }
+.diagnostic-callout > small { margin-top: 18px; color: #92aca6; font-size: 0.7rem; }
 .quiz-progress { padding: 22px 32px 0; }
 .quiz-progress > div { height: 5px; background: #dce8e5; border-radius: 5px; overflow: hidden; }
 .quiz-progress > div span { display: block; width: 100%; height: 100%; background: var(--cyan-deep); transform-origin: left center; transition: transform 350ms var(--ease); }
@@ -362,6 +368,7 @@ ul { list-style: none; }
   .proof-project-copy h3 { font-size: 1.55rem; }
   .proof-note { margin-top: -6px; }
   .diagnostic-shell { min-height: 610px; border-radius: 13px; }
+  .diagnostic-callout { min-height: 0; padding: 34px 26px; }
   .quiz-progress { padding: 18px 20px 0; }
   .quiz-screen { padding: 30px 22px 32px; }
   .quiz-screen h3 { font-size: 1.85rem; }

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { diagnosticUrl } from '../diagnostic-url'
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -48,7 +49,7 @@ export default function Header() {
           </nav>
           <div className="header-action">
             <motion.a
-              href="#diagnostico"
+              href={diagnosticUrl}
               className="button button--small"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -87,7 +88,7 @@ export default function Header() {
                 {l.label}
               </motion.a>
             ))}
-            <a href="#diagnostico" className="button" onClick={() => setMobileOpen(false)}>
+            <a href={diagnosticUrl} className="button" onClick={() => setMobileOpen(false)}>
               Fazer diagnóstico
             </a>
           </motion.div>

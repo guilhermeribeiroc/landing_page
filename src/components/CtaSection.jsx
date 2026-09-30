@@ -1,3 +1,5 @@
+import { diagnosticUrl } from '../diagnostic-url'
+
 export default function CtaSection() {
   return (
     <section className="cta-section" id="contato">
@@ -8,8 +10,8 @@ export default function CtaSection() {
             <p>Em poucos minutos, você identifica o processo que merece atenção primeiro e ganha clareza para a próxima conversa.</p>
           </div>
           <div className="cta-action">
-            <a href="#diagnostico" className="button">Começar diagnóstico</a>
-            <small>6 perguntas · resultado imediato · sem compromisso</small>
+            <a href={diagnosticUrl} className="button">Começar diagnóstico</a>
+            <small>7 perguntas · cerca de 3 minutos · sem compromisso</small>
           </div>
         </div>
       </div>

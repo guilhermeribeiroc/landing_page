@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { diagnosticUrl } from '../diagnostic-url'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -26,7 +27,7 @@ export default function Hero() {
               Criamos sistemas, landing pages e automações para transformar cada contato em processo — e cada processo em crescimento.
             </motion.p>
             <motion.div className="hero-actions" variants={fadeUp} custom={2}>
-              <a href="#diagnostico" className="button hero-diagnostic-cta">
+              <a href={diagnosticUrl} className="button hero-diagnostic-cta">
                 Fazer diagnóstico gratuito
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
               </a>
@@ -40,7 +41,7 @@ export default function Hero() {
               </a>
             </motion.div>
             <motion.p className="hero-note" variants={fadeUp} custom={3}>
-              6 perguntas · cerca de 2 minutos · sem compromisso
+              7 perguntas · cerca de 3 minutos · sem compromisso
             </motion.p>
           </motion.div>
 

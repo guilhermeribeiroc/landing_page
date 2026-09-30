@@ -1,3 +1,5 @@
+import { diagnosticUrl } from '../diagnostic-url'
+
 const solutionCards = [
   {
     icon: 'inbox',
@@ -27,7 +29,7 @@ const solutionCards = [
     description: 'Conectamos as ferramentas que você já usa para que informação, tarefas e alertas cheguem ao lugar certo na hora certa.',
     outcome: 'Para reduzir retrabalho sem perder contexto, controle ou histórico.',
     action: 'Mapear uma automação',
-    href: '#diagnostico',
+    href: diagnosticUrl,
     visual: 'automation',
   },
 ]
@@ -179,7 +181,7 @@ export default function ValueSection() {
             <p className="section-kicker">Produtos SaaS da Otimiza</p>
             <h2>Dois sistemas públicos dentro de um portfólio maior.</h2>
             <p>MyClínica e GestProTech estão abertos ao público e representam duas das nossas principais plataformas. Além deles, criamos outros sistemas e soluções sob medida para operações específicas.</p>
-            <a href="#diagnostico" className="text-link">
+            <a href={diagnosticUrl} className="text-link">
               Quero um sistema assim
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
             </a>

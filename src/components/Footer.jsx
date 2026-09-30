@@ -1,3 +1,5 @@
+import { diagnosticUrl } from '../diagnostic-url'
+
 export default function Footer() {
   return (
     <footer className="footer">
@@ -18,7 +20,7 @@ export default function Footer() {
             <a href="#como-funciona">Como funciona</a>
             <a href="#beneficios">Benefícios</a>
             <a href="#resultados">Resultados</a>
-            <a href="#diagnostico">Diagnóstico</a>
+            <a href={diagnosticUrl}>Diagnóstico</a>
           </div>
 
           <div className="footer-col">
