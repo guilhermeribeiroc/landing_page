@@ -11,11 +11,11 @@ Landing page principal da OtimizaAI em modo Persuade.
 
 ## Audience, job and action
 
-Donos, diretores e gestores de PMEs reconhecem desperdícios operacionais, entendem como a automação funciona e concluem o Diagnóstico Gratuito de Eficiência. A ação principal é gerar o score e levar o resumo qualificado para uma conversa no WhatsApp.
+Donos, diretores e gestores de PMEs reconhecem desperdícios operacionais, entendem como a automação funciona e iniciam o Diagnóstico Gratuito de Eficiência em uma rota dedicada. A ação principal é entrar no diagnóstico completo; o envio do resumo para uma conversa no WhatsApp acontece somente ao final dessa experiência.
 
 ## Proof and constraints
 
-Usar apenas projetos e capturas reais disponíveis em `public/`. Não inventar métricas, clientes, prazos fixos ou depoimentos. O formulário calcula o resultado localmente; integração futura com backend ou CRM continua em aberto.
+Usar apenas projetos e capturas reais disponíveis em `public/`. Não inventar métricas, clientes, prazos fixos ou depoimentos. A landing não coleta respostas nem calcula resultado: seus pontos de conversão levam para `/diagnostico/`. Integração futura com backend ou CRM continua em aberto.
 
 ## Direction and memorable moment
 
