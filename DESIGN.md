@@ -52,7 +52,6 @@ typography:
     letterSpacing: "0.14em"
 rounded:
   label: "7px"
-  field: "9px"
   compact: "10px"
   option: "11px"
   control: "12px"
@@ -87,20 +86,20 @@ components:
     textColor: "{colors.cyan-bright}"
     typography: "{typography.body}"
   field-default:
-    backgroundColor: "#fbfdfc"
+    backgroundColor: "#f6fbf9"
     textColor: "{colors.text-dark}"
-    rounded: "{rounded.field}"
-    padding: "0 13px"
-    height: "49px"
+    rounded: "{rounded.compact}"
+    padding: "0 14px"
+    height: "52px"
   option-default:
-    backgroundColor: "#fbfdfc"
-    textColor: "{colors.text-dark}"
+    backgroundColor: "rgba(255, 255, 255, 0.025)"
+    textColor: "#dceee9"
     rounded: "{rounded.option}"
-    padding: "0 17px"
-    height: "56px"
+    padding: "12px 14px 12px 16px"
+    height: "64px"
   option-selected:
-    backgroundColor: "#dcf8ef"
-    textColor: "{colors.text-dark}"
+    backgroundColor: "rgba(39, 221, 197, 0.14)"
+    textColor: "{colors.paper-pure}"
     rounded: "{rounded.option}"
   control-panel:
     backgroundColor: "#0c242e"
@@ -108,10 +107,10 @@ components:
     rounded: "{rounded.surface}"
     padding: "22px"
   diagnostic-shell:
-    backgroundColor: "{colors.paper-pure}"
-    textColor: "{colors.text-dark}"
+    backgroundColor: "#0d2832"
+    textColor: "{colors.text}"
     rounded: "{rounded.surface}"
-    padding: "38px 48px 42px"
+    padding: "52px 54px 48px"
 ---
 
 # Design System: OtimizaAI
@@ -235,16 +234,16 @@ Os componentes parecem precisos, confiantes e operacionais. Estado e hierarquia 
 ### Cards / Containers
 
 - **Corner Style:** superfícies principais usam raio de 16px; subblocos internos ficam entre 8px e 12px.
-- **Background:** painéis operacionais partem de Petróleo Elevado ou tons literais adjacentes; painéis de tarefa usam Papel Puro.
+- **Background:** painéis operacionais e tarefas imersivas partem de Petróleo Elevado ou tons literais adjacentes; campos de entrada usam um papel quase puro para contraste funcional.
 - **Shadow Strategy:** tonal primeiro; aplique a sombra ambiental correspondente apenas em painéis de destaque.
 - **Border:** 1px translúcido, claro sobre escuro e escuro sobre claro.
 - **Internal Padding:** 22–48px conforme a densidade; preserve espaço maior em experiências de leitura e menor em linhas de dados.
 
 ### Inputs / Fields
 
-- **Style:** fundo quase branco, contorno verde-acinzentado de 1px, altura de 49px, raio de 9px e padding horizontal de 13px.
-- **Focus:** borda muda para Ciano Profundo e recebe anel externo translúcido de 3px.
-- **Error / Disabled:** erro usa texto escuro avermelhado sobre fundo coral muito claro; não existe estado desabilitado implementado.
+- **Style:** input e select usam fundo quase branco, contorno verde-acinzentado de 1px, altura de 52px, raio de 10px e padding horizontal de 14px; textarea preserva o mesmo tratamento com altura inicial de 145px e redimensionamento vertical.
+- **Focus:** borda muda para Ciano de Fluxo e recebe anel externo translúcido de 3px.
+- **Error / Disabled:** erro usa Coral de Alerta translúcido sobre o campo petróleo; não existe estado desabilitado implementado.
 
 ### Navigation
 
@@ -257,7 +256,7 @@ O painel operacional é o componente-assinatura: cabeçalho de estado, entradas 
 
 ### Diagnostic Controls
 
-O diagnóstico usa uma superfície clara elevada, progresso linear ciano, opções de linha inteira e estados selecionados em verde-menta. Mudanças de etapa combinam fade com deslocamento horizontal curto; a tarefa permanece legível e direta em todas as larguras.
+O diagnóstico completo usa uma superfície petróleo tonal, progresso linear ciano e opções de linha inteira com estados selecionados em ciano translúcido. Perguntas de escolha única, escolha múltipla, texto livre, campos de contato e selects compartilham a mesma geometria precisa. Mudanças de etapa combinam fade com deslocamento horizontal curto; a tarefa permanece legível e direta em todas as larguras.
 
 ## Do's and Don'ts
 

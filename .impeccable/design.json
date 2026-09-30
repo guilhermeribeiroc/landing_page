@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-30T19:38:33.9341066-03:00",
+  "title": "Design System: OtimizaAI",
+  "extensions": {
+    "colorMeta": {
+      "ink": { "role": "neutral", "displayName": "Petróleo Base", "canonical": "#071821", "tonalRamp": ["oklch(15% 0.029 233.6)", "oklch(27% 0.029 233.6)", "oklch(39% 0.029 233.6)", "oklch(51% 0.029 233.6)", "oklch(63% 0.029 233.6)", "oklch(75% 0.029 233.6)", "oklch(87% 0.029 233.6)", "oklch(95% 0.029 233.6)"] },
+      "ink-raised": { "role": "neutral", "displayName": "Petróleo Elevado", "canonical": "#0b222c", "tonalRamp": ["oklch(15% 0.035 229.1)", "oklch(27% 0.035 229.1)", "oklch(39% 0.035 229.1)", "oklch(51% 0.035 229.1)", "oklch(63% 0.035 229.1)", "oklch(75% 0.035 229.1)", "oklch(87% 0.035 229.1)", "oklch(95% 0.035 229.1)"] },
+      "ink-soft": { "role": "neutral", "displayName": "Petróleo Suave", "canonical": "#12323d", "tonalRamp": ["oklch(15% 0.042 223.6)", "oklch(27% 0.042 223.6)", "oklch(39% 0.042 223.6)", "oklch(51% 0.042 223.6)", "oklch(63% 0.042 223.6)", "oklch(75% 0.042 223.6)", "oklch(87% 0.042 223.6)", "oklch(95% 0.042 223.6)"] },
+      "paper": { "role": "neutral", "displayName": "Papel Frio", "canonical": "#f5faf8", "tonalRamp": ["oklch(15% 0.006 170.5)", "oklch(27% 0.006 170.5)", "oklch(39% 0.006 170.5)", "oklch(51% 0.006 170.5)", "oklch(63% 0.006 170.5)", "oklch(75% 0.006 170.5)", "oklch(87% 0.006 170.5)", "oklch(95% 0.006 170.5)"] },
+      "paper-pure": { "role": "neutral", "displayName": "Papel Puro", "canonical": "#ffffff", "tonalRamp": ["oklch(15% 0 0)", "oklch(27% 0 0)", "oklch(39% 0 0)", "oklch(51% 0 0)", "oklch(63% 0 0)", "oklch(75% 0 0)", "oklch(87% 0 0)", "oklch(95% 0 0)"] },
+      "paper-muted": { "role": "neutral", "displayName": "Papel Neblina", "canonical": "#d9e6e2", "tonalRamp": ["oklch(15% 0.015 175.7)", "oklch(27% 0.015 175.7)", "oklch(39% 0.015 175.7)", "oklch(51% 0.015 175.7)", "oklch(63% 0.015 175.7)", "oklch(75% 0.015 175.7)", "oklch(87% 0.015 175.7)", "oklch(95% 0.015 175.7)"] },
+      "cyan": { "role": "primary", "displayName": "Ciano de Fluxo", "canonical": "#27ddc5", "tonalRamp": ["oklch(15% 0.140 180.9)", "oklch(27% 0.140 180.9)", "oklch(39% 0.140 180.9)", "oklch(51% 0.140 180.9)", "oklch(63% 0.140 180.9)", "oklch(75% 0.140 180.9)", "oklch(87% 0.140 180.9)", "oklch(95% 0.140 180.9)"] },
+      "cyan-bright": { "role": "primary", "displayName": "Ciano Luminoso", "canonical": "#62f4de", "tonalRamp": ["oklch(15% 0.129 181.6)", "oklch(27% 0.129 181.6)", "oklch(39% 0.129 181.6)", "oklch(51% 0.129 181.6)", "oklch(63% 0.129 181.6)", "oklch(75% 0.129 181.6)", "oklch(87% 0.129 181.6)", "oklch(95% 0.129 181.6)"] },
+      "cyan-deep": { "role": "primary", "displayName": "Ciano Profundo", "canonical": "#087e77", "tonalRamp": ["oklch(15% 0.092 187.9)", "oklch(27% 0.092 187.9)", "oklch(39% 0.092 187.9)", "oklch(51% 0.092 187.9)", "oklch(63% 0.092 187.9)", "oklch(75% 0.092 187.9)", "oklch(87% 0.092 187.9)", "oklch(95% 0.092 187.9)"] },
+      "lime": { "role": "secondary", "displayName": "Lima Concluído", "canonical": "#c9f563", "tonalRamp": ["oklch(15% 0.178 124.1)", "oklch(27% 0.178 124.1)", "oklch(39% 0.178 124.1)", "oklch(51% 0.178 124.1)", "oklch(63% 0.178 124.1)", "oklch(75% 0.178 124.1)", "oklch(87% 0.178 124.1)", "oklch(95% 0.178 124.1)"] },
+      "danger": { "role": "tertiary", "displayName": "Coral de Alerta", "canonical": "#ff857a", "tonalRamp": ["oklch(15% 0.150 26.6)", "oklch(27% 0.150 26.6)", "oklch(39% 0.150 26.6)", "oklch(51% 0.150 26.6)", "oklch(63% 0.150 26.6)", "oklch(75% 0.150 26.6)", "oklch(87% 0.150 26.6)", "oklch(95% 0.150 26.6)"] },
+      "text": { "role": "neutral", "displayName": "Texto Luminoso", "canonical": "#effbf7", "tonalRamp": ["oklch(15% 0.014 174.2)", "oklch(27% 0.014 174.2)", "oklch(39% 0.014 174.2)", "oklch(51% 0.014 174.2)", "oklch(63% 0.014 174.2)", "oklch(75% 0.014 174.2)", "oklch(87% 0.014 174.2)", "oklch(95% 0.014 174.2)"] },
+      "text-muted": { "role": "neutral", "displayName": "Texto Neblina", "canonical": "#a9c2bc", "tonalRamp": ["oklch(15% 0.028 179.5)", "oklch(27% 0.028 179.5)", "oklch(39% 0.028 179.5)", "oklch(51% 0.028 179.5)", "oklch(63% 0.028 179.5)", "oklch(75% 0.028 179.5)", "oklch(87% 0.028 179.5)", "oklch(95% 0.028 179.5)"] },
+      "text-dark": { "role": "neutral", "displayName": "Texto Petróleo", "canonical": "#0c252d", "tonalRamp": ["oklch(15% 0.034 221.8)", "oklch(27% 0.034 221.8)", "oklch(39% 0.034 221.8)", "oklch(51% 0.034 221.8)", "oklch(63% 0.034 221.8)", "oklch(75% 0.034 221.8)", "oklch(87% 0.034 221.8)", "oklch(95% 0.034 221.8)"] },
+      "text-dark-muted": { "role": "neutral", "displayName": "Texto Petróleo Suave", "canonical": "#526c72", "tonalRamp": ["oklch(15% 0.032 213.4)", "oklch(27% 0.032 213.4)", "oklch(39% 0.032 213.4)", "oklch(51% 0.032 213.4)", "oklch(63% 0.032 213.4)", "oklch(75% 0.032 213.4)", "oklch(87% 0.032 213.4)", "oklch(95% 0.032 213.4)"] },
+      "line": { "role": "neutral", "displayName": "Linha Clara", "canonical": "rgba(191, 235, 225, 0.16)", "tonalRamp": ["oklch(15% 0.047 179.8 / 0.16)", "oklch(27% 0.047 179.8 / 0.16)", "oklch(39% 0.047 179.8 / 0.16)", "oklch(51% 0.047 179.8 / 0.16)", "oklch(63% 0.047 179.8 / 0.16)", "oklch(75% 0.047 179.8 / 0.16)", "oklch(87% 0.047 179.8 / 0.16)", "oklch(95% 0.047 179.8 / 0.16)"] },
+      "line-dark": { "role": "neutral", "displayName": "Linha Escura", "canonical": "rgba(7, 35, 42, 0.14)", "tonalRamp": ["oklch(15% 0.036 217.4 / 0.14)", "oklch(27% 0.036 217.4 / 0.14)", "oklch(39% 0.036 217.4 / 0.14)", "oklch(51% 0.036 217.4 / 0.14)", "oklch(63% 0.036 217.4 / 0.14)", "oklch(75% 0.036 217.4 / 0.14)", "oklch(87% 0.036 217.4 / 0.14)", "oklch(95% 0.036 217.4 / 0.14)"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Manchetes de entrada com presença editorial máxima." },
+      "headline": { "displayName": "Headline", "purpose": "Títulos de seção e chamadas principais." },
+      "title": { "displayName": "Title", "purpose": "Nomes de etapas, casos e blocos funcionais." },
+      "body": { "displayName": "Body", "purpose": "Texto corrido, instruções e controles." },
+      "label": { "displayName": "Instrument Label", "purpose": "Estados, categorias e microdados curtos." }
+    },
+    "shadows": [
+      { "name": "action", "value": "0 14px 32px rgba(0, 147, 132, 0.22)", "purpose": "Brilho ambiental sob a ação primária." },
+      { "name": "action-hover", "value": "0 18px 38px rgba(0, 147, 132, 0.3)", "purpose": "Amplia o destaque da ação durante hover." },
+      { "name": "operational-panel", "value": "0 28px 70px rgba(0, 5, 8, 0.35)", "purpose": "Separa um painel operacional de destaque do campo escuro." },
+      { "name": "light-panel", "value": "0 30px 70px rgba(7, 44, 46, 0.15)", "purpose": "Eleva experiências claras manipuláveis quando usadas." },
+      { "name": "floating-control", "value": "0 10px 24px rgba(7, 24, 33, 0.18)", "purpose": "Eleva controles compactos posicionados entre superfícies." }
+    ],
+    "motion": [
+      { "name": "ease-emphasized", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Revelações de painéis e transições com desaceleração forte." },
+      { "name": "ease-standard", "value": "cubic-bezier(0.4, 0, 0.2, 1)", "purpose": "Entrada editorial e transições gerais." },
+      { "name": "state-fast", "value": "180ms", "purpose": "Hover e seleção de controles." },
+      { "name": "state-standard", "value": "220ms", "purpose": "Ações primárias e pequenos deslocamentos." },
+      { "name": "progress", "value": "340ms", "purpose": "Atualização da barra de progresso do diagnóstico." },
+      { "name": "live-pulse", "value": "2200ms", "purpose": "Pulso contínuo de status ativo." }
+    ],
+    "breakpoints": [
+      { "name": "compact", "value": "520px" },
+      { "name": "diagnostic-mobile", "value": "680px" },
+      { "name": "mobile", "value": "780px" },
+      { "name": "stack", "value": "1020px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Ação dominante para iniciar ou avançar uma tarefa.",
+      "html": "<button class=\"ds-button-primary\">Continuar <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\" /></svg></button>",
+      "css": ".ds-button-primary{min-height:52px;padding:0 24px;border:0;border-radius:12px;background:var(--cyan,#27ddc5);color:#04191d;display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--body,'Manrope',sans-serif);font-weight:800;letter-spacing:-.015em;cursor:pointer;box-shadow:0 14px 32px rgba(0,147,132,.22);transition:transform 220ms cubic-bezier(.16,1,.3,1),background 220ms cubic-bezier(.16,1,.3,1),box-shadow 220ms cubic-bezier(.16,1,.3,1)}.ds-button-primary svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.ds-button-primary:hover{background:var(--cyan-bright,#62f4de);transform:translateY(-2px);box-shadow:0 18px 38px rgba(0,147,132,.3)}.ds-button-primary:active{transform:translateY(0)}.ds-button-primary:focus-visible{outline:3px solid var(--lime,#c9f563);outline-offset:4px}"
+    },
+    {
+      "name": "Text Link",
+      "kind": "button",
+      "refersTo": "text-link",
+      "description": "Ação secundária que preserva o fluxo editorial.",
+      "html": "<a class=\"ds-text-link\" href=\"#\">Entender o processo <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\" /></svg></a>",
+      "css": ".ds-text-link{display:inline-flex;align-items:center;gap:9px;color:var(--cyan-bright,#62f4de);font-family:var(--body,'Manrope',sans-serif);font-weight:700;text-decoration:none;text-underline-offset:5px}.ds-text-link svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.ds-text-link:hover{text-decoration:underline}.ds-text-link:focus-visible{outline:3px solid var(--lime,#c9f563);outline-offset:4px}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "button-compact",
+      "description": "Marca, links compactos e diagnóstico como ação dominante.",
+      "html": "<nav class=\"ds-navigation\"><a class=\"ds-nav-logo\" href=\"#\">Otimiza<span>AI</span></a><div class=\"ds-nav-links\"><a href=\"#\">Como funciona</a><a href=\"#\">Benefícios</a><a class=\"ds-nav-action\" href=\"#\">Fazer diagnóstico</a></div></nav>",
+      "css": ".ds-navigation{height:76px;padding:0 24px;border-bottom:1px solid var(--line,rgba(191,235,225,.16));background:var(--ink,#071821);color:var(--text,#effbf7);display:flex;align-items:center;justify-content:space-between;font-family:var(--body,'Manrope',sans-serif)}.ds-nav-logo{color:inherit;font-family:var(--display,'Bricolage Grotesque',sans-serif);font-size:1.18rem;font-weight:800;letter-spacing:-.03em;text-decoration:none}.ds-nav-logo span{color:var(--cyan,#27ddc5)}.ds-nav-links{display:flex;align-items:center;gap:26px}.ds-nav-links>a{color:#c6d9d4;font-size:.84rem;font-weight:600;text-decoration:none}.ds-nav-links>a:hover{color:var(--cyan-bright,#62f4de)}.ds-nav-links .ds-nav-action{min-height:42px;padding:0 18px;border-radius:10px;background:var(--cyan,#27ddc5);color:#04191d;display:inline-flex;align-items:center;font-weight:800}.ds-nav-links .ds-nav-action:hover{background:var(--cyan-bright,#62f4de);color:#04191d}.ds-navigation a:focus-visible{outline:3px solid var(--lime,#c9f563);outline-offset:4px}"
+    },
+    {
+      "name": "Active Status Chip",
+      "kind": "chip",
+      "refersTo": "control-panel",
+      "description": "Confirma atividade em andamento sem competir com a ação principal.",
+      "html": "<span class=\"ds-status-chip\"><i></i> Automação ativa</span>",
+      "css": ".ds-status-chip{display:inline-flex;align-items:center;gap:8px;color:var(--lime,#c9f563);font-family:var(--body,'Manrope',sans-serif);font-size:.77rem;font-weight:700}.ds-status-chip i{width:7px;height:7px;border-radius:50%;background:var(--lime,#c9f563);box-shadow:0 0 0 5px rgba(201,245,99,.08);animation:ds-status-pulse 2.2s ease-in-out infinite}@keyframes ds-status-pulse{50%{box-shadow:0 0 0 9px rgba(201,245,99,0)}}@media(prefers-reduced-motion:reduce){.ds-status-chip i{animation:none}}"
+    },
+    {
+      "name": "Operational Panel",
+      "kind": "custom",
+      "refersTo": "control-panel",
+      "description": "Componente-assinatura que mostra entradas, processamento e saídas concluídas.",
+      "html": "<section class=\"ds-operation-panel\"><header><span>Fluxo operacional</span><span class=\"ds-operation-live\"><i></i> Ativo</span></header><div class=\"ds-operation-stage\"><small>ENTRADAS</small><div class=\"ds-operation-tags\"><span>Formulário</span><span>Cadastro</span></div></div><div class=\"ds-operation-core\"><b>AI</b><span><strong>Otimiza Flow</strong><small>validando · organizando</small></span></div><ul><li><span>01</span> Responsável notificado <b>feito</b></li><li><span>02</span> Dashboard atualizado <b>feito</b></li></ul></section>",
+      "css": ".ds-operation-panel{max-width:560px;overflow:hidden;border:1px solid rgba(122,221,207,.22);border-radius:16px;background:#0c242e;color:var(--text,#effbf7);font-family:var(--body,'Manrope',sans-serif);box-shadow:0 28px 70px rgba(0,5,8,.35)}.ds-operation-panel header{height:54px;padding:0 20px;border-bottom:1px solid var(--line,rgba(191,235,225,.16));display:flex;align-items:center;justify-content:space-between;color:#c9ddd8;font-size:.77rem;font-weight:700}.ds-operation-live{display:inline-flex;align-items:center;gap:7px;color:var(--lime,#c9f563)}.ds-operation-live i{width:7px;height:7px;border-radius:50%;background:currentColor}.ds-operation-stage{padding:22px}.ds-operation-stage>small{display:block;margin-bottom:12px;color:#6f918a;font-size:.65rem;font-weight:800;letter-spacing:.14em}.ds-operation-tags{display:flex;gap:8px}.ds-operation-tags span{padding:8px 10px;border-radius:8px;background:#102f39;color:#c7d8d4;font-size:.72rem}.ds-operation-core{margin:2px 22px;padding:16px 18px;border-radius:12px;background:var(--cyan,#27ddc5);color:#062128;display:flex;align-items:center;gap:14px}.ds-operation-core>b{width:44px;height:44px;border:1px solid rgba(4,40,44,.34);border-radius:50%;display:grid;place-items:center;font-family:var(--display,'Bricolage Grotesque',sans-serif)}.ds-operation-core span strong,.ds-operation-core span small{display:block}.ds-operation-core span small{font-size:.66rem}.ds-operation-panel ul{margin:0;padding:18px 22px 22px;list-style:none}.ds-operation-panel li{min-height:42px;border-bottom:1px solid var(--line,rgba(191,235,225,.16));display:grid;grid-template-columns:28px 1fr auto;align-items:center;gap:10px;color:#c8ddd7;font-size:.76rem}.ds-operation-panel li>span{color:#9ab5af}.ds-operation-panel li>b{color:var(--lime,#c9f563);font-size:.66rem}"
+    },
+    {
+      "name": "Diagnostic Option",
+      "kind": "button",
+      "refersTo": "option-default",
+      "description": "Opção de linha inteira para seleção única ou múltipla no painel escuro.",
+      "html": "<button class=\"ds-diagnostic-option selected\" type=\"button\" aria-pressed=\"true\"><span>Vários sistemas separados</span><i aria-hidden=\"true\"></i></button>",
+      "css": ".ds-diagnostic-option{width:100%;min-height:64px;padding:12px 14px 12px 16px;border:1px solid var(--line,rgba(191,235,225,.16));border-radius:11px;background:rgba(255,255,255,.025);color:#dceee9;display:flex;align-items:center;justify-content:space-between;gap:14px;text-align:left;font-family:var(--body,'Manrope',sans-serif);font-size:.84rem;font-weight:650;cursor:pointer;transition:transform 180ms cubic-bezier(.16,1,.3,1),border-color 180ms ease,background 180ms ease}.ds-diagnostic-option i{width:18px;height:18px;flex:0 0 auto;border:1px solid #75968e;border-radius:50%}.ds-diagnostic-option:hover{border-color:rgba(98,244,222,.62);background:rgba(39,221,197,.08);transform:translateY(-1px)}.ds-diagnostic-option.selected{border-color:var(--cyan,#27ddc5);background:rgba(39,221,197,.14);color:#fff}.ds-diagnostic-option.selected i{border:5px solid var(--cyan,#27ddc5)}.ds-diagnostic-option:focus-visible{outline:3px solid var(--lime,#c9f563);outline-offset:4px}.ds-diagnostic-option:active{transform:translateY(0)}"
+    },
+    {
+      "name": "Diagnostic Field",
+      "kind": "input",
+      "refersTo": "field-default",
+      "description": "Campo claro de alto contraste inserido em superfície operacional escura.",
+      "html": "<label class=\"ds-diagnostic-field\"><span>Qual é o principal sistema usado hoje?</span><input placeholder=\"Ex.: Pipedrive, HubSpot, sistema próprio\" /></label>",
+      "css": ".ds-diagnostic-field{display:grid;gap:8px;color:#d6e8e3;font-family:var(--body,'Manrope',sans-serif);font-size:.73rem;font-weight:800}.ds-diagnostic-field input{width:100%;min-height:52px;padding:0 14px;border:1px solid #45636a;border-radius:10px;outline:none;background:#f6fbf9;color:var(--text-dark,#0c252d);font:inherit;font-size:.9rem;font-weight:400}.ds-diagnostic-field input::placeholder{color:#607979;opacity:1}.ds-diagnostic-field input:focus{border-color:var(--cyan,#27ddc5);box-shadow:0 0 0 3px rgba(39,221,197,.15)}"
+    },
+    {
+      "name": "Diagnostic Panel",
+      "kind": "card",
+      "refersTo": "diagnostic-shell",
+      "description": "Superfície de tarefa para progresso, pergunta e ações do diagnóstico completo.",
+      "html": "<section class=\"ds-diagnostic-panel\"><div class=\"ds-diagnostic-progress\"><div><span>Pergunta 4 de 7</span><span>57%</span></div><i><b></b></i></div><div class=\"ds-diagnostic-content\"><h2>Qual área precisa ganhar controle primeiro?</h2><p>Vamos usar isso para priorizar sua conversa com a OtimizaAI.</p></div></section>",
+      "css": ".ds-diagnostic-panel{max-width:620px;min-height:430px;overflow:hidden;border:1px solid var(--line,rgba(191,235,225,.16));border-radius:16px;background:#0d2832;color:var(--text,#effbf7);font-family:var(--body,'Manrope',sans-serif)}.ds-diagnostic-progress{padding:26px 34px 0}.ds-diagnostic-progress>div{display:flex;justify-content:space-between;gap:20px;color:#b6cbc5;font-size:.69rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase}.ds-diagnostic-progress>i{display:block;height:5px;margin-top:12px;overflow:hidden;border-radius:100px;background:rgba(191,235,225,.16)}.ds-diagnostic-progress>i>b{display:block;width:57%;height:100%;border-radius:inherit;background:var(--cyan,#27ddc5)}.ds-diagnostic-content{padding:52px 54px 48px}.ds-diagnostic-content h2{max-width:18ch;margin:0;font-family:var(--display,'Bricolage Grotesque',sans-serif);font-size:clamp(2rem,3.3vw,3.1rem);line-height:1;letter-spacing:-.035em}.ds-diagnostic-content p{max-width:56ch;margin:17px 0 0;color:var(--text-muted,#a9c2bc);font-size:.91rem;line-height:1.7}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Painel Operacional Editorial",
+    "overview": "A identidade da OtimizaAI transforma tecnologia em evidência operacional. O mundo visual combina a autoridade de um painel de controle com a clareza e o ritmo de uma peça editorial: hierarquia tipográfica forte, superfícies organizadas, dados alinhados e sinais de estado que explicam o que está acontecendo sem depender de jargão.\n\nO sistema é escuro, preciso e confiante nos momentos de demonstração, alternando com campos claros que reduzem carga cognitiva em explicações e tarefas. Componentes parecem instrumentos de trabalho reais, não adereços futuristas. A anti-referência confirmada é a landing genérica que apenas lista serviços de tecnologia: toda expressão deve tornar processo, fluxo, estado ou resultado visível.",
+    "keyCharacteristics": [
+      "Azul-petróleo profundo como ambiente operacional dominante.",
+      "Ciano para ação, conexão e progressão; verde-lima para conclusão e atividade confirmada.",
+      "Tipografia editorial compacta, com contraste claro entre grandes manchetes e rótulos instrumentais.",
+      "Elevação tonal por padrão e sombras ambientais apenas onde a hierarquia precisa de destaque.",
+      "Controles arredondados com contenção: amigáveis, mas nunca lúdicos ou inflados."
+    ],
+    "rules": [
+      { "name": "The Signal Color Rule", "body": "Ciano indica ação ou fluxo; verde-lima confirma atividade ou conclusão. Não use os dois como decoração intercambiável.", "section": "colors" },
+      { "name": "The Two Fields Rule", "body": "Superfícies escuras demonstram a operação; superfícies claras organizam leitura e decisão. A alternância cria ritmo sem diluir a identidade.", "section": "colors" },
+      { "name": "The Editorial Compression Rule", "body": "Manchetes usam entrelinha e tracking negativos para formar blocos decisivos; corpo e instruções recuperam espaço para leitura confortável.", "section": "typography" },
+      { "name": "The Instrument Label Rule", "body": "Caixa alta e tracking expandido pertencem a microestados e rótulos curtos, nunca a parágrafos ou chamadas principais.", "section": "typography" },
+      { "name": "The Continuous Flow Rule", "body": "Prefira grids, linhas e relações antes/depois que façam o olhar percorrer um processo; evite transformar cada ideia em um card independente.", "section": "layout" },
+      { "name": "The Tonal-First Rule", "body": "Se dois planos puderem ser separados por tom e borda, não adicione sombra. A sombra é um recurso de hierarquia, não uma textura global.", "section": "elevation" },
+      { "name": "The Calibrated Radius Rule", "body": "O raio acompanha a escala e a função do componente; não transforme painéis, campos e chips em cápsulas genéricas.", "section": "shapes" }
+    ],
+    "dos": [
+      "Do use o contraste entre campos escuros de operação e campos claros de leitura ou decisão.",
+      "Do reserve Ciano de Fluxo para ação, conexão e progresso, e Lima Concluído para confirmação.",
+      "Do mostre processos com entradas, transições, estados e saídas visualmente verificáveis.",
+      "Do mantenha bordas finas, dados alinhados e espaçamento disciplinado para que os componentes pareçam instrumentos confiáveis.",
+      "Do respeite `prefers-reduced-motion` e preserve foco visível em todas as ações."
+    ],
+    "donts": [
+      "Don't reduza a identidade a uma grade genérica de serviços, ícones e promessas abstratas.",
+      "Don't use verde-lima como acento decorativo amplo; sua raridade comunica conclusão e atividade.",
+      "Don't aplique sombras em todas as superfícies; separe planos por tom e borda primeiro.",
+      "Don't use caixa alta espaçada fora de rótulos curtos, estados e categorias.",
+      "Don't invente componentes, variantes ou estados que o produto ainda não implementa."
+    ]
+  }
+}
