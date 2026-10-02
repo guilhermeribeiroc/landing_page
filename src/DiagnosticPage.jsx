@@ -5,50 +5,51 @@ import { homeUrl } from './diagnostic-url'
 const questions = [
   {
     id: 'industry',
-    title: 'Em qual segmento sua empresa atua?',
+    title: 'Qual setor descreve melhor sua empresa?',
     helper: 'Isso nos ajuda a entender a rotina, os clientes e as integrações mais prováveis.',
     type: 'single',
-    options: ['Serviços profissionais', 'Comércio ou varejo', 'Saúde e bem-estar', 'Imobiliário ou construção', 'Educação', 'Tecnologia', 'Outro segmento'],
+    options: ['Serviços e consultoria', 'Comércio ou varejo', 'Saúde, clínica ou bem-estar', 'Imobiliário ou construção', 'Educação e cursos', 'Tecnologia ou software', 'Outro setor'],
   },
   {
     id: 'offer',
-    title: 'O que sua empresa vende principalmente?',
-    helper: 'Escolha a opção que mais representa a operação hoje.',
-    type: 'single',
-    options: ['Serviços', 'Produtos', 'Produtos e serviços', 'Assinaturas ou recorrência'],
+    title: 'O que sua empresa vende ou entrega?',
+    helper: 'Uma frase simples já nos dá contexto para pensar na solução certa.',
+    type: 'shortText',
+    label: 'Produto ou serviço principal',
+    placeholder: 'Ex.: clínica odontológica, móveis planejados, cursos de inglês…',
   },
   {
     id: 'team',
-    title: 'Quantas pessoas participam da operação?',
-    helper: 'Considere as pessoas que vendem, atendem ou executam processos diariamente.',
+    title: 'Quantas pessoas atendem ou fazem a operação acontecer?',
+    helper: 'Considere quem vende, atende clientes, executa processos ou acompanha a rotina.',
     type: 'single',
     options: ['Somente eu', 'De 2 a 5 pessoas', 'De 6 a 15 pessoas', 'De 16 a 50 pessoas', 'Mais de 50 pessoas'],
   },
   {
     id: 'priority',
-    title: 'Qual área precisa ganhar controle primeiro?',
-    helper: 'Vamos usar isso para priorizar sua conversa com a OtimizaAI.',
+    title: 'Onde você sente que perde mais tempo ou oportunidades?',
+    helper: 'Escolha o ponto que mais incomoda hoje. Vamos usá-lo para priorizar a conversa.',
     type: 'single',
-    options: ['Comercial e CRM', 'Atendimento ao cliente', 'Financeiro', 'Operação ou produção', 'Relatórios e indicadores', 'Cadastros e documentos'],
+    options: ['Responder e organizar novos contatos', 'Acompanhar propostas, vendas ou clientes', 'Agendar, atender e confirmar clientes', 'Organizar tarefas, prazos ou equipe', 'Controlar financeiro e cobranças', 'Ver resultados, relatórios ou indicadores'],
   },
   {
     id: 'control',
-    title: 'Como a rotina é controlada atualmente?',
-    helper: 'Sem julgamento: queremos entender o ponto de partida.',
+    title: 'Onde ficam hoje as informações de clientes e processos?',
+    helper: 'Sem julgamento: queremos entender o ponto de partida da empresa.',
     type: 'single',
-    options: ['Planilhas', 'WhatsApp e mensagens', 'Vários sistemas separados', 'Já usamos um CRM', 'Um sistema próprio ou ERP', 'Controles informais'],
+    options: ['Principalmente em planilhas', 'WhatsApp, mensagens e anotações', 'Vários sistemas que não se comunicam', 'Já usamos um CRM', 'Um sistema próprio ou ERP', 'Ainda não temos um controle definido'],
   },
   {
     id: 'tools',
-    title: 'Quais ferramentas precisam conversar entre si?',
-    helper: 'Selecione todas que fazem parte da rotina. Isso indica o volume de integrações.',
+    title: 'Quais canais e ferramentas fazem parte da rotina?',
+    helper: 'Selecione todas as que usam com frequência. Isso indica o que pode ser integrado.',
     type: 'multiple',
     options: ['WhatsApp', 'Instagram', 'Planilhas', 'Site ou formulários', 'E-mail', 'ERP ou financeiro', 'Agenda', 'Nenhuma por enquanto'],
   },
   {
     id: 'process',
-    title: 'O que você gostaria de automatizar ou organizar primeiro?',
-    helper: 'Descreva em uma ou duas frases. Ex.: “quando um lead chegar pelo WhatsApp, criar o cadastro e avisar o vendedor”.',
+    title: 'Qual situação você quer resolver primeiro?',
+    helper: 'Descreva em uma ou duas frases. Ex.: “quando um cliente pedir orçamento pelo WhatsApp, criar o cadastro e avisar o vendedor”.',
     type: 'text',
   },
 ]
@@ -106,6 +107,7 @@ export default function DiagnosticPage() {
 
   function validateQuestion() {
     if (question.type === 'multiple' && !(answers[question.id] || []).length) return 'Selecione pelo menos uma ferramenta para continuar.'
+    if (question.type === 'shortText' && (answers[question.id] || '').trim().length < 4) return 'Conte em poucas palavras o que sua empresa vende ou entrega.'
     if (question.type === 'text' && (answers[question.id] || '').trim().length < 8) return 'Conte um pouco mais sobre o primeiro processo que você quer melhorar.'
     if (!answers[question.id]) return 'Escolha uma opção para continuar.'
     if (needsSystemName && !(answers.systemName || '').trim()) return 'Informe o CRM, ERP ou sistema principal que vocês usam.'
@@ -219,6 +221,13 @@ export default function DiagnosticPage() {
                       return <button key={option} type="button" className={selected ? 'selected' : ''} onClick={() => toggleTool(option)} aria-pressed={selected}><span>{option}</span><i aria-hidden="true" /></button>
                     })}
                   </div>
+                )}
+
+                {question.type === 'shortText' && (
+                  <label className="diagnostic-field">
+                    <span>{question.label}</span>
+                    <input value={answers[question.id] || ''} onChange={(event) => setAnswer(question.id, event.target.value)} placeholder={question.placeholder} autoFocus />
+                  </label>
                 )}
 
                 {question.type === 'text' && (

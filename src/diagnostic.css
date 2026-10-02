@@ -29,7 +29,7 @@
 .diagnostic-field--inline { margin-top: 18px; }
 .diagnostic-field > span { color: #d6e8e3; font-size: 0.73rem; font-weight: 800; }
 .diagnostic-field em { color: #8eaaa2; font-style: normal; font-weight: 500; }
-.diagnostic-field input, .diagnostic-field textarea, .diagnostic-field select { width: 100%; border: 1px solid #45636a; border-radius: 10px; outline: none; background: #f6fbf9; color: var(--text-dark); font: inherit; font-size: 0.9rem; }
+.diagnostic-field input, .diagnostic-field textarea, .diagnostic-field select { width: 100%; border: 1px solid #45636a; border-radius: 10px; outline: none; background: #f6fbf9; color: #0b2b31; caret-color: #0b2b31; font: inherit; font-size: 0.9rem; font-weight: 600; }
 .diagnostic-field input, .diagnostic-field select { min-height: 52px; padding: 0 14px; }
 .diagnostic-field textarea { min-height: 145px; padding: 14px; resize: vertical; line-height: 1.6; }
 .diagnostic-field input::placeholder, .diagnostic-field textarea::placeholder { color: #607979; opacity: 1; }
