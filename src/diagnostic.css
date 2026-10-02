@@ -1,10 +1,10 @@
 .diagnostic-page { min-height: 100vh; background: radial-gradient(ellipse 72% 48% at 78% 5%, rgba(29, 125, 118, 0.22), transparent 72%), var(--ink); color: var(--text); }
-.diagnostic-page-header { width: min(calc(100% - 48px), var(--container)); height: 84px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
+.diagnostic-page-header { width: min(calc(100% - 48px), var(--container)); height: 84px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
 .diagnostic-page-header .logo-icon { width: 34px; height: 34px; }
 .diagnostic-return, .diagnostic-back, .diagnostic-restart { display: inline-flex; align-items: center; gap: 7px; border: 0; background: transparent; color: var(--text-muted); font-size: 0.8rem; font-weight: 700; cursor: pointer; text-underline-offset: 4px; }
 .diagnostic-return:hover, .diagnostic-back:hover, .diagnostic-restart:hover { color: var(--cyan-bright); text-decoration: underline; }
 .diagnostic-return svg, .diagnostic-back svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-.diagnostic-page-main { width: min(calc(100% - 48px), var(--container)); min-height: calc(100vh - 84px); margin: 0 auto; padding: 86px 0 72px; display: grid; grid-template-columns: minmax(0, 0.84fr) minmax(520px, 1.16fr); gap: clamp(48px, 9vw, 126px); align-items: center; }
+.diagnostic-page-main { width: min(calc(100% - 48px), var(--container)); min-height: calc(100vh - 84px); margin: 0 auto; padding: 86px 0 72px; display: grid; grid-template-columns: minmax(0, 0.84fr) minmax(520px, 1.16fr); gap: clamp(48px, 9vw, 126px); align-items: center; background: transparent; background-attachment: initial; }
 .diagnostic-intro h1 { max-width: 12ch; font-family: var(--display); font-size: clamp(3rem, 5.6vw, 5.5rem); line-height: 0.92; letter-spacing: -0.04em; text-wrap: balance; }
 .diagnostic-intro > p { max-width: 48ch; margin-top: 28px; color: var(--text-muted); font-size: 1rem; line-height: 1.75; }
 .diagnostic-intro ul { display: grid; gap: 12px; margin-top: 36px; }

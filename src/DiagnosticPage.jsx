@@ -13,10 +13,9 @@ const questions = [
   {
     id: 'offer',
     title: 'O que sua empresa vende ou entrega?',
-    helper: 'Uma frase simples já nos dá contexto para pensar na solução certa.',
-    type: 'shortText',
-    label: 'Produto ou serviço principal',
-    placeholder: 'Ex.: clínica odontológica, móveis planejados, cursos de inglês…',
+    helper: 'Escolha a opção mais próxima. Se não aparecer, você pode explicar em poucas palavras.',
+    type: 'single',
+    options: ['Serviços profissionais (consultoria, agência, contabilidade)', 'Atendimento ou saúde (clínica, estética, terapias)', 'Produtos físicos (loja, varejo, distribuição)', 'Cursos, mentoria ou treinamentos', 'Software, assinatura ou produto digital', 'Imóveis, construção ou projetos', 'Outro produto ou serviço'],
   },
   {
     id: 'team',
@@ -80,6 +79,7 @@ export default function DiagnosticPage() {
   const question = questions[current]
   const progress = screen === 'questions' ? ((current + 1) / questions.length) * 100 : 100
   const needsSystemName = question?.id === 'control' && ['Já usamos um CRM', 'Vários sistemas separados', 'Um sistema próprio ou ERP'].includes(answers.control)
+  const needsOfferDetail = question?.id === 'offer' && answers.offer === 'Outro produto ou serviço'
 
   useEffect(() => {
     sessionStorage.setItem('otimiza-full-diagnostic', JSON.stringify(answers))
@@ -88,7 +88,7 @@ export default function DiagnosticPage() {
   const summary = useMemo(() => questions.map((item) => {
     const value = answers[item.id]
     return `${item.title}\n${Array.isArray(value) ? value.join(', ') : value || 'Não informado'}`
-  }).join('\n\n'), [answers])
+  }).concat(answers.offer === 'Outro produto ou serviço' && answers.otherOffer ? `Produto ou serviço informado\n${answers.otherOffer}` : []).join('\n\n'), [answers])
 
   function setAnswer(id, value) {
     setError('')
@@ -107,9 +107,9 @@ export default function DiagnosticPage() {
 
   function validateQuestion() {
     if (question.type === 'multiple' && !(answers[question.id] || []).length) return 'Selecione pelo menos uma ferramenta para continuar.'
-    if (question.type === 'shortText' && (answers[question.id] || '').trim().length < 4) return 'Conte em poucas palavras o que sua empresa vende ou entrega.'
     if (question.type === 'text' && (answers[question.id] || '').trim().length < 8) return 'Conte um pouco mais sobre o primeiro processo que você quer melhorar.'
     if (!answers[question.id]) return 'Escolha uma opção para continuar.'
+    if (needsOfferDetail && !(answers.otherOffer || '').trim()) return 'Conte em poucas palavras qual é o produto ou serviço principal.'
     if (needsSystemName && !(answers.systemName || '').trim()) return 'Informe o CRM, ERP ou sistema principal que vocês usam.'
     return ''
   }
@@ -223,10 +223,10 @@ export default function DiagnosticPage() {
                   </div>
                 )}
 
-                {question.type === 'shortText' && (
-                  <label className="diagnostic-field">
-                    <span>{question.label}</span>
-                    <input value={answers[question.id] || ''} onChange={(event) => setAnswer(question.id, event.target.value)} placeholder={question.placeholder} autoFocus />
+                {needsOfferDetail && (
+                  <label className="diagnostic-field diagnostic-field--inline">
+                    <span>Qual é o principal produto ou serviço?</span>
+                    <input value={answers.otherOffer || ''} onChange={(event) => setAnswer('otherOffer', event.target.value)} placeholder="Ex.: equipamentos agrícolas, advocacia trabalhista…" autoFocus />
                   </label>
                 )}
 
