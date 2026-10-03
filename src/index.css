@@ -527,12 +527,10 @@ ul { list-style: none; }
 @media (max-width: 520px) { .tech-marquee .tech-marquee-group { gap: 30px; padding-right: 30px; } }
 
 .logo-icon--png { width: 38px; height: 38px; padding: 0; overflow: hidden; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
-.hero-diagnostic-cta { position: relative; min-height: 58px; padding-inline: 28px; background: #a9e6e2; box-shadow: 0 0 0 1px rgba(214, 255, 251, .22), 0 18px 42px rgba(93, 213, 207, .28); animation: diagnosticGlow 2.4s ease-in-out infinite; }
+.hero-diagnostic-cta { position: relative; min-height: 58px; padding-inline: 28px; background: #a9e6e2; box-shadow: 0 0 0 1px rgba(214, 255, 251, .22), 0 18px 42px rgba(93, 213, 207, .28); }
 .hero-diagnostic-cta::after { content: ''; position: absolute; inset: 4px; border: 1px solid rgba(255, 255, 255, .42); border-radius: 8px; pointer-events: none; }
 .hero-diagnostic-cta:hover { background: #d5fffb; box-shadow: 0 0 0 1px rgba(226, 255, 251, .5), 0 22px 52px rgba(110, 233, 225, .42); }
 .hero-ai-link { display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 22px; border: 1.5px solid rgba(163, 219, 216, .45); border-radius: 12px; background: rgba(163, 219, 216, .08); color: #e1fffb; font-size: .86rem; font-weight: 800; text-decoration: none; transition: transform 220ms var(--ease), background 220ms var(--ease), border-color 220ms var(--ease), box-shadow 220ms var(--ease); }.hero-ai-link svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }.hero-ai-link:hover { border-color: rgba(163, 219, 216, .85); background: rgba(163, 219, 216, .16); transform: translateY(-2px); box-shadow: 0 14px 32px rgba(0, 147, 132, .18); }
-@keyframes diagnosticGlow { 50% { box-shadow: 0 0 0 7px rgba(103, 218, 212, 0), 0 20px 48px rgba(93, 213, 207, .42); } }
-@media (prefers-reduced-motion: reduce) { .hero-diagnostic-cta { animation: none; } }
 
 .form-grid input { color: #0a2830; caret-color: #0a2830; font-weight: 600; }
 .form-grid input:focus { color: #071e25; background: #ffffff; }
@@ -552,6 +550,8 @@ ul { list-style: none; }
 :root { --site-background: radial-gradient(ellipse 65% 45% at 50% 18%, rgba(51, 133, 149, .35), transparent 70%), radial-gradient(circle at 5% 55%, rgba(113, 195, 188, .12), transparent 24%), linear-gradient(150deg, #071520 0%, #04090e 48%, #061016 100%); }
 body { background: #061016; }
 main { background: var(--site-background); background-attachment: fixed; }
+/* Fundos fixos podem piscar durante a rolagem em navegadores móveis. */
+@media (max-width: 780px), (hover: none) and (pointer: coarse) { main { background-attachment: scroll; } }
 .hero, .tech-stack, .services-section, .method-section, .use-cases, .benefits, .proof, .diagnostic, .faq, .cta-section, .footer { background: transparent; }
 
 /* Soluções: uma escolha de próximo passo, não uma lista de recursos. */
