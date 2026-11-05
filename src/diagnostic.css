@@ -10,7 +10,10 @@
 .diagnostic-intro ul { display: grid; gap: 12px; margin-top: 36px; }
 .diagnostic-intro li { display: flex; align-items: center; gap: 10px; color: #d7e9e4; font-size: 0.86rem; font-weight: 650; }
 .diagnostic-intro li svg { width: 18px; height: 18px; padding: 3px; flex: 0 0 auto; border-radius: 50%; background: var(--cyan-deep); color: white; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
-.diagnostic-form-shell { min-height: 626px; border: 1px solid var(--line); border-radius: var(--radius); background: #0d2832; overflow: hidden; }
+.diagnostic-form-shell { min-height: 626px; display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: var(--radius); background: #0d2832; overflow: hidden; }
+.diagnostic-form-shell > .diagnostic-step, .diagnostic-form-shell > .diagnostic-result { flex: 1; }
+/* A etapa de contato é a mais alta: reservar a altura dela evita o card pular a cada pergunta. */
+@media (min-width: 1021px) { .diagnostic-form-shell { min-height: 772px; } }
 .diagnostic-progress { padding: 26px 34px 0; }
 .diagnostic-progress-meta { display: flex; justify-content: space-between; gap: 20px; color: #b6cbc5; font-size: 0.69rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
 .diagnostic-progress-track { height: 5px; margin-top: 12px; overflow: hidden; border-radius: 100px; background: rgba(191, 235, 225, 0.16); }
@@ -48,6 +51,10 @@
 .diagnostic-result-focus small { display: block; color: #8eaaa2; font-size: 0.63rem; font-weight: 800; letter-spacing: 0.1em; }
 .diagnostic-result-focus strong { display: block; margin-top: 6px; color: #e5f4ef; font-family: var(--display); font-size: 1.3rem; line-height: 1.15; }
 .diagnostic-restart { margin-top: 18px; }
-@media (max-width: 1020px) { .diagnostic-page-main { grid-template-columns: 1fr; gap: 56px; padding-top: 66px; } .diagnostic-intro h1 { max-width: 15ch; } .diagnostic-intro > p { max-width: 64ch; } .diagnostic-intro ul { grid-template-columns: repeat(3, max-content); } .diagnostic-form-shell { max-width: 760px; width: 100%; } }
+@media (max-width: 1020px) { .diagnostic-page-main { grid-template-columns: 1fr; gap: 56px; padding-top: 66px; } .diagnostic-intro h1 { max-width: 15ch; } .diagnostic-intro > p { max-width: 64ch; } .diagnostic-intro ul { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); } .diagnostic-form-shell { max-width: 760px; width: 100%; } }
 @media (max-width: 680px) { .diagnostic-page-header, .diagnostic-page-main { width: min(calc(100% - 32px), var(--container)); } .diagnostic-page-header { height: 70px; } .diagnostic-return { font-size: 0; } .diagnostic-return svg { width: 21px; height: 21px; } .diagnostic-page-main { padding: 48px 0; gap: 44px; } .diagnostic-intro h1 { font-size: clamp(2.8rem, 13vw, 4rem); } .diagnostic-intro > p { margin-top: 20px; font-size: 0.94rem; } .diagnostic-intro ul { grid-template-columns: 1fr; margin-top: 28px; } .diagnostic-form-shell { min-height: 0; } .diagnostic-progress { padding: 22px 22px 0; } .diagnostic-step, .diagnostic-result { min-height: 0; padding: 36px 22px 28px; } .diagnostic-step h2, .diagnostic-result h2 { font-size: 2.15rem; } .diagnostic-options, .diagnostic-options--multiple, .diagnostic-contact-grid { grid-template-columns: 1fr; } .diagnostic-options { margin-top: 26px; } .diagnostic-options button { min-height: 58px; } .diagnostic-contact-grid .diagnostic-field { margin-top: 18px; } .diagnostic-actions { padding-top: 26px; } .diagnostic-actions .button { flex: 1; } }
 @media (prefers-reduced-motion: reduce) { .diagnostic-options button, .diagnostic-progress-track span { transition: none; } }
+.diagnostic-options--stack { grid-template-columns: 1fr; }
+@media (min-width: 681px) { .diagnostic-options--stack { grid-template-columns: 1fr 1fr; } }
+.diagnostic-result-icon + h2 { margin-top: 22px; }
+.diagnostic-result > p + .button { margin-top: 28px; }

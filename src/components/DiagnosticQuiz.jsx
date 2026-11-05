@@ -1,8 +1,8 @@
 import { diagnosticUrl } from '../diagnostic-url'
 
-export default function DiagnosticQuiz() {
+export default function DiagnosticQuiz({ anchorId = 'diagnostico' }) {
   return (
-    <section className="diagnostic" id="diagnostico">
+    <section className="diagnostic" id={anchorId}>
       <div className="container diagnostic-layout">
         <div className="diagnostic-copy">
           <h2>Entenda o que sua empresa precisa antes de falar em ferramenta.</h2>

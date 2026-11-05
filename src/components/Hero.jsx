@@ -2,10 +2,10 @@ import { motion } from 'framer-motion'
 import { diagnosticUrl } from '../diagnostic-url'
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 14 },
   visible: (i = 0) => ({
     opacity: 1, y: 0,
-    transition: { delay: i * 0.15, duration: 0.7, ease: [0.4, 0, 0.2, 1] }
+    transition: { delay: i * 0.06, duration: 0.4, ease: [0.4, 0, 0.2, 1] }
   })
 }
 

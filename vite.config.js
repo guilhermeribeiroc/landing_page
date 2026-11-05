@@ -13,6 +13,7 @@ export default defineConfig({
         main: resolve(rootDir, 'index.html'),
         iaHumanizada: resolve(rootDir, 'ia-humanizada/index.html'),
         diagnostico: resolve(rootDir, 'diagnostico/index.html'),
+        orcamento: resolve(rootDir, 'diagnostico/automacao/index.html'),
       },
     },
   },

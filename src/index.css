@@ -1,3 +1,7 @@
+/* Fontes locais (variáveis, subconjunto latin): sem requisição ao Google e sem a troca de fonte que reajustava o hero. */
+@font-face { font-family: 'Bricolage Grotesque'; font-style: normal; font-weight: 200 800; font-stretch: 75% 100%; font-display: swap; src: url('/fonts/bricolage-grotesque-latin.woff2') format('woff2'); }
+@font-face { font-family: 'Manrope'; font-style: normal; font-weight: 200 800; font-display: swap; src: url('/fonts/manrope-latin.woff2') format('woff2'); }
+
 :root {
   --ink: #040a10;
   --ink-raised: #08151e;
@@ -397,9 +401,10 @@ ul { list-style: none; }
 
 .hero { min-height: 0; padding: 168px 0 122px; background: radial-gradient(ellipse 65% 45% at 50% 18%, rgba(51, 133, 149, 0.35), transparent 70%), radial-gradient(circle at 5% 55%, rgba(113, 195, 188, 0.12), transparent 24%), linear-gradient(150deg, #071520 0%, #04090e 48%, #061016 100%); }
 .hero::before { content: ''; position: absolute; inset: 0; pointer-events: none; opacity: .35; background-image: linear-gradient(rgba(176, 231, 227, .045) 1px, transparent 1px), linear-gradient(90deg, rgba(176, 231, 227, .045) 1px, transparent 1px); background-size: 62px 62px; mask-image: radial-gradient(ellipse at 50% 28%, black, transparent 72%); }
-.hero-glow { position: absolute; width: 38rem; height: 38rem; border-radius: 999px; filter: blur(56px); pointer-events: none; opacity: .18; }
-.hero-glow--left { left: -23rem; top: 9rem; background: #75c7c1; }
-.hero-glow--right { right: -24rem; bottom: -12rem; background: #256a7a; }
+/* Gradiente radial no lugar de filter: blur — o blur gerava um retângulo de borda dura no primeiro quadro. */
+.hero-glow { position: absolute; width: 38rem; height: 38rem; border-radius: 999px; pointer-events: none; opacity: .18; }
+.hero-glow--left { left: -23rem; top: 9rem; background: radial-gradient(circle, #75c7c1 0%, rgba(117, 199, 193, 0) 68%); }
+.hero-glow--right { right: -24rem; bottom: -12rem; background: radial-gradient(circle, #256a7a 0%, rgba(37, 106, 122, 0) 68%); }
 .hero-container { position: relative; z-index: 1; }
 .hero-layout { min-height: auto; grid-template-columns: 1fr; gap: 56px; padding-bottom: 0; text-align: center; }
 .hero-copy { max-width: 860px; margin-inline: auto; }
@@ -549,9 +554,8 @@ ul { list-style: none; }
 /* Uma única atmosfera contínua para toda a landing. */
 :root { --site-background: radial-gradient(ellipse 65% 45% at 50% 18%, rgba(51, 133, 149, .35), transparent 70%), radial-gradient(circle at 5% 55%, rgba(113, 195, 188, .12), transparent 24%), linear-gradient(150deg, #071520 0%, #04090e 48%, #061016 100%); }
 body { background: #061016; }
-main { background: var(--site-background); background-attachment: fixed; }
-/* Fundos fixos podem piscar durante a rolagem em navegadores móveis. */
-@media (max-width: 780px), (hover: none) and (pointer: coarse) { main { background-attachment: scroll; } }
+/* Atmosfera fixa em camada própria: background-attachment: fixed repinta a página inteira a cada rolagem e pisca. */
+body::before { content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none; background: var(--site-background); }
 .hero, .tech-stack, .services-section, .method-section, .use-cases, .benefits, .proof, .diagnostic, .faq, .cta-section, .footer { background: transparent; }
 
 /* Soluções: uma escolha de próximo passo, não uma lista de recursos. */

@@ -8,7 +8,7 @@ export default function Header() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50)
-    window.addEventListener('scroll', onScroll)
+    window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
@@ -21,12 +21,9 @@ export default function Header() {
 
   return (
     <>
-      <motion.header
+      <header
         className="header"
-        style={scrolled ? { background: 'rgba(10,22,40,0.92)', borderBottomColor: 'rgba(0,212,255,0.1)' } : {}}
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+        style={scrolled ? { background: 'rgba(4,10,16,0.88)', borderBottomColor: 'rgba(163,219,216,0.14)' } : {}}
       >
         <div className="container header-inner">
           <a href="#hero" className="logo">
@@ -35,35 +32,21 @@ export default function Header() {
           </a>
 
           <nav className="nav-links">
-            {links.map((l, i) => (
-              <motion.a
-                key={l.href}
-                href={l.href}
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 * i + 0.3 }}
-              >
-                {l.label}
-              </motion.a>
+            {links.map((l) => (
+              <a key={l.href} href={l.href}>{l.label}</a>
             ))}
           </nav>
           <div className="header-action">
-            <motion.a
-              href={diagnosticUrl}
-              className="button button--small"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.7 }}
-            >
+            <a href={diagnosticUrl} className="button button--small">
               Fazer diagnóstico
-            </motion.a>
+            </a>
 
             <button className="menu-toggle" onClick={() => setMobileOpen(true)} aria-label="Abrir menu" aria-expanded={mobileOpen}>
               <span /><span /><span />
             </button>
           </div>
         </div>
-      </motion.header>
+      </header>
 
       <AnimatePresence>
         {mobileOpen && (

@@ -1,5 +1,6 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
+import { formatPhone } from './phone'
 import { homeUrl } from './diagnostic-url'
 
 const questions = [
@@ -54,6 +55,19 @@ const questions = [
 ]
 
 const initialContact = { name: '', company: '', phone: '', email: '', timing: '', investment: '', consent: false }
+const storageKey = 'otimizai-full-diagnostic'
+const systemAnswers = ['Vários sistemas que não se comunicam', 'Já usamos um CRM', 'Um sistema próprio ou ERP']
+
+function loadProgress() {
+  try {
+    const saved = JSON.parse(sessionStorage.getItem(storageKey) || '{}')
+    const answers = saved.answers && typeof saved.answers === 'object' ? saved.answers : {}
+    const current = Number.isInteger(saved.current) ? Math.min(Math.max(saved.current, 0), questions.length - 1) : 0
+    return { answers, current }
+  } catch {
+    return { answers: {}, current: 0 }
+  }
+}
 
 function ArrowIcon() {
   return <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
@@ -68,22 +82,26 @@ function CheckIcon() {
 }
 
 export default function DiagnosticPage() {
-  const [current, setCurrent] = useState(0)
-  const [answers, setAnswers] = useState(() => {
-    try { return JSON.parse(sessionStorage.getItem('otimizai-full-diagnostic') || '{}') } catch { return {} }
-  })
+  const transitioning = useRef(false)
+  const [saved] = useState(loadProgress)
+  const [current, setCurrent] = useState(saved.current)
+  const [answers, setAnswers] = useState(saved.answers)
   const [contact, setContact] = useState(initialContact)
   const [screen, setScreen] = useState('questions')
   const [error, setError] = useState('')
 
   const question = questions[current]
   const progress = screen === 'questions' ? ((current + 1) / questions.length) * 100 : 100
-  const needsSystemName = question?.id === 'control' && ['Já usamos um CRM', 'Vários sistemas separados', 'Um sistema próprio ou ERP'].includes(answers.control)
+  const needsSystemName = question?.id === 'control' && systemAnswers.includes(answers.control)
   const needsOfferDetail = question?.id === 'offer' && answers.offer === 'Outro produto ou serviço'
 
   useEffect(() => {
-    sessionStorage.setItem('otimiza-full-diagnostic', JSON.stringify(answers))
-  }, [answers])
+    if (screen !== 'questions') document.querySelector('.diagnostic-form-shell')?.scrollIntoView({ block: 'start' })
+  }, [screen])
+
+  useEffect(() => {
+    try { sessionStorage.setItem(storageKey, JSON.stringify({ answers, current })) } catch { /* armazenamento indisponível */ }
+  }, [answers, current])
 
   const summary = useMemo(() => questions.map((item) => {
     const value = answers[item.id]
@@ -114,21 +132,31 @@ export default function DiagnosticPage() {
     return ''
   }
 
+  // Durante a animação de saída o botão antigo ainda recebe cliques com o estado velho: um duplo clique pulava perguntas e, na última, deixava `current` fora do intervalo (tela em branco).
+  function startTransition() {
+    if (transitioning.current) return false
+    transitioning.current = true
+    window.setTimeout(() => { transitioning.current = false }, 450)
+    return true
+  }
+
   function next() {
     const validation = validateQuestion()
     if (validation) {
       setError(validation)
       return
     }
+    if (!startTransition()) return
     setError('')
-    if (current < questions.length - 1) setCurrent((value) => value + 1)
+    if (current < questions.length - 1) setCurrent((value) => Math.min(value + 1, questions.length - 1))
     else setScreen('contact')
   }
 
   function back() {
+    if (!startTransition()) return
     setError('')
     if (screen === 'contact') setScreen('questions')
-    else if (current > 0) setCurrent((value) => value - 1)
+    else if (current > 0) setCurrent((value) => Math.max(value - 1, 0))
     else window.location.href = homeUrl
   }
 
@@ -136,6 +164,10 @@ export default function DiagnosticPage() {
     event.preventDefault()
     if (!contact.name.trim() || !contact.company.trim() || !contact.phone.trim() || !contact.email.trim()) {
       setError('Preencha nome, empresa, WhatsApp e e-mail para continuar.')
+      return
+    }
+    if (contact.phone.replace(/\D/g, '').length < 10) {
+      setError('Informe o WhatsApp com DDD.')
       return
     }
     if (!/^\S+@\S+\.\S+$/.test(contact.email)) {
@@ -151,12 +183,21 @@ export default function DiagnosticPage() {
   }
 
   function whatsappUrl() {
-    const message = `Olá! Concluí o Diagnóstico de Automação e CRM da OtimizaAI.\n\nNome: ${contact.name}\nEmpresa: ${contact.company}\nWhatsApp: ${contact.phone}\nE-mail: ${contact.email}\nQuando deseja começar: ${contact.timing || 'Não informado'}\nFaixa de investimento: ${contact.investment || 'Não informado'}\n${answers.systemName ? `Sistema atual: ${answers.systemName}\n` : ''}\n${summary}\n\nQuero receber uma análise inicial do projeto.`
+    const contactLines = [
+      `Nome: ${contact.name}`,
+      `Empresa: ${contact.company}`,
+      `WhatsApp: ${contact.phone}`,
+      `E-mail: ${contact.email}`,
+      contact.timing && `Quando deseja começar: ${contact.timing}`,
+      contact.investment && `Faixa de investimento: ${contact.investment}`,
+      systemAnswers.includes(answers.control) && answers.systemName && `Sistema atual: ${answers.systemName}`,
+    ].filter(Boolean).join('\n')
+    const message = `Olá! Concluí o Diagnóstico de Automação e CRM da OtimizaAI.\n\n${contactLines}\n\n${summary}\n\nQuero receber uma análise inicial do projeto.`
     return `https://wa.me/558888557247?text=${encodeURIComponent(message)}`
   }
 
   function restart() {
-    sessionStorage.removeItem('otimiza-full-diagnostic')
+    try { sessionStorage.removeItem(storageKey) } catch { /* armazenamento indisponível */ }
     setAnswers({})
     setContact(initialContact)
     setCurrent(0)
@@ -252,7 +293,7 @@ export default function DiagnosticPage() {
                 <div className="diagnostic-contact-grid">
                   <label className="diagnostic-field"><span>Seu nome</span><input value={contact.name} onChange={(event) => setContact({ ...contact, name: event.target.value })} autoComplete="name" placeholder="Como podemos chamar você?" /></label>
                   <label className="diagnostic-field"><span>Empresa</span><input value={contact.company} onChange={(event) => setContact({ ...contact, company: event.target.value })} autoComplete="organization" placeholder="Nome da empresa" /></label>
-                  <label className="diagnostic-field"><span>WhatsApp</span><input value={contact.phone} onChange={(event) => setContact({ ...contact, phone: event.target.value })} autoComplete="tel" inputMode="tel" placeholder="(00) 00000-0000" /></label>
+                  <label className="diagnostic-field"><span>WhatsApp</span><input value={contact.phone} onChange={(event) => setContact({ ...contact, phone: formatPhone(event.target.value) })} type="tel" autoComplete="tel" inputMode="numeric" placeholder="(00) 00000-0000" /></label>
                   <label className="diagnostic-field"><span>E-mail</span><input value={contact.email} onChange={(event) => setContact({ ...contact, email: event.target.value })} autoComplete="email" inputMode="email" placeholder="voce@empresa.com" /></label>
                   <label className="diagnostic-field"><span>Quando pretende começar? <em>opcional</em></span><select value={contact.timing} onChange={(event) => setContact({ ...contact, timing: event.target.value })}><option value="">Selecione uma opção</option><option>O quanto antes</option><option>Nos próximos 30 dias</option><option>Nos próximos 90 dias</option><option>Ainda estou avaliando</option></select></label>
                   <label className="diagnostic-field"><span>Faixa de investimento <em>opcional</em></span><select value={contact.investment} onChange={(event) => setContact({ ...contact, investment: event.target.value })}><option value="">Prefiro receber orientação</option><option>Até R$ 3 mil</option><option>De R$ 3 mil a R$ 8 mil</option><option>De R$ 8 mil a R$ 20 mil</option><option>Acima de R$ 20 mil</option></select></label>
@@ -261,7 +302,7 @@ export default function DiagnosticPage() {
                 {error && <p className="diagnostic-error" role="alert">{error}</p>}
                 <div className="diagnostic-actions">
                   <button type="button" className="diagnostic-back" onClick={back}><BackIcon /> Voltar</button>
-                  <button className="button" type="submit">Ver meu resumo <ArrowIcon /></button>
+                  <button className="button" type="submit">Finalizar <ArrowIcon /></button>
                 </div>
               </motion.form>
             )}

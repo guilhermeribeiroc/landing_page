@@ -47,7 +47,7 @@ function UseCaseIcon({ type }) {
 
 function SolutionVisual({ type }) {
   if (type === 'landing') {
-    return <div className="solution-preview solution-preview--landing"><img src="/projects/ohfome-landing.png" alt="Prévia da landing page da OhFome" /></div>
+    return <div className="solution-preview solution-preview--landing"><img src="/projects/ohfome-landing.webp" alt="Prévia da landing page da OhFome" /></div>
   }
 
   if (type === 'system') {
