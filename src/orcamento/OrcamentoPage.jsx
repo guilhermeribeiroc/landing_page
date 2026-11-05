@@ -13,9 +13,9 @@ function loadProgress() {
     const saved = JSON.parse(sessionStorage.getItem(storageKey) || '{}')
     const answers = saved.answers && typeof saved.answers === 'object' ? saved.answers : {}
     if (presetNiche) answers.niche = presetNiche
-    return { answers, current: Number.isInteger(saved.current) && saved.current >= 0 ? saved.current : 0 }
+    return { answers, current: Number.isInteger(saved.current) && saved.current >= 0 ? saved.current : 0, started: saved.started === true }
   } catch {
-    return { answers: presetNiche ? { niche: presetNiche } : {}, current: 0 }
+    return { answers: presetNiche ? { niche: presetNiche } : {}, current: 0, started: false }
   }
 }
 
@@ -29,6 +29,7 @@ export default function OrcamentoPage() {
   const [answers, setAnswers] = useState(saved.answers)
   const [current, setCurrent] = useState(saved.current)
   const [contact, setContact] = useState(initialContact)
+  const [started, setStarted] = useState(saved.started)
   const [screen, setScreen] = useState('questions')
   const [error, setError] = useState('')
 
@@ -39,13 +40,20 @@ export default function OrcamentoPage() {
   const progress = screen === 'questions' ? ((index + 1) / list.length) * 100 : 100
   const needsOtherNiche = question?.id === 'niche' && answers.niche === OTHER
 
+  // Ao trocar de pergunta ou tela, o card volta ao topo se o botão de continuar estava lá embaixo.
   useEffect(() => {
-    if (screen !== 'questions') document.querySelector('.diagnostic-form-shell')?.scrollIntoView({ block: 'start' })
-  }, [screen])
+    const shell = document.querySelector('.diagnostic-form-shell')
+    if (!shell) return
+    if (screen !== 'questions' || shell.getBoundingClientRect().top < 0) shell.scrollIntoView({ block: 'start' })
+  }, [screen, index, started])
 
   useEffect(() => {
-    try { sessionStorage.setItem(storageKey, JSON.stringify({ answers, current: index })) } catch { /* armazenamento indisponível */ }
-  }, [answers, index])
+    try { sessionStorage.setItem(storageKey, JSON.stringify({ answers, current: index, started })) } catch { /* armazenamento indisponível */ }
+  }, [answers, index, started])
+
+  function start() {
+    setStarted(true)
+  }
 
   function setAnswer(id, value) {
     setError('')
@@ -152,17 +160,19 @@ export default function OrcamentoPage() {
         </span>
       </header>
 
-      <main className="diagnostic-page-main">
-        <aside className="diagnostic-intro">
-          <h1>Conte como é o seu atendimento. Nós montamos o orçamento.</h1>
-          <p>Poucas perguntas, todas de clique, para entender o que a automação precisa fazer e quanto vai custar.</p>
-          <ul>
-            <li><Icon d="M5 12.5l4 4L19 7" /> Leva cerca de 3 minutos</li>
-            <li><Icon d="M5 12.5l4 4L19 7" /> Quase tudo de clique, sem digitar texto longo</li>
-            <li><Icon d="M5 12.5l4 4L19 7" /> Resumo pronto para enviar no WhatsApp</li>
-          </ul>
-        </aside>
-
+      <main className={`diagnostic-page-main diagnostic-page-main--solo${started ? '' : ' diagnostic-page-main--intro'}`}>
+        {!started ? (
+          <div className="diagnostic-intro">
+            <h1>Conte como é o seu atendimento. Nós montamos o orçamento.</h1>
+            <p>Poucas perguntas, todas de clique, para entender o que a automação precisa fazer e quanto vai custar.</p>
+            <ul>
+              <li><Icon d="M5 12.5l4 4L19 7" /> Leva cerca de 3 minutos</li>
+              <li><Icon d="M5 12.5l4 4L19 7" /> Quase tudo de clique, sem digitar texto longo</li>
+              <li><Icon d="M5 12.5l4 4L19 7" /> Resumo pronto para enviar no WhatsApp</li>
+            </ul>
+            <button type="button" className="button diagnostic-start" onClick={start}>Responder o questionário <Icon d={arrow} /></button>
+          </div>
+        ) : (
         <section className="diagnostic-form-shell" aria-live="polite">
           <div className="diagnostic-progress" aria-label={`Progresso: ${Math.round(progress)}%`}>
             <div className="diagnostic-progress-meta"><span>{screen === 'questions' ? `Pergunta ${index + 1} de ${list.length}` : 'Etapa final'}</span><span>{Math.round(progress)}%</span></div>
@@ -237,6 +247,7 @@ export default function OrcamentoPage() {
             )}
           </AnimatePresence>
         </section>
+        )}
       </main>
     </div>
   )
