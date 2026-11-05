@@ -152,7 +152,7 @@ export default function OrcamentoPage() {
   const enter = { initial: { opacity: 0, x: 20 }, animate: { opacity: 1, x: 0 }, exit: { opacity: 0, x: -16 }, transition: { duration: 0.25 } }
 
   return (
-    <div className="diagnostic-page">
+    <div className={`diagnostic-page${started ? '' : ' diagnostic-page--intro'}`}>
       <header className="diagnostic-page-header">
         <span className="logo">
           <span className="logo-icon"><img src={`${import.meta.env.BASE_URL}logo-clean.png`} alt="" /></span>
@@ -167,8 +167,8 @@ export default function OrcamentoPage() {
             <p>Poucas perguntas, todas de clique, para entender o que a automação precisa fazer e quanto vai custar.</p>
             <ul>
               <li><Icon d="M5 12.5l4 4L19 7" /> Leva cerca de 3 minutos</li>
-              <li><Icon d="M5 12.5l4 4L19 7" /> Quase tudo de clique, sem digitar texto longo</li>
-              <li><Icon d="M5 12.5l4 4L19 7" /> Resumo pronto para enviar no WhatsApp</li>
+              <li><Icon d="M5 12.5l4 4L19 7" /> Quase tudo de clique, sem digitar</li>
+              <li><Icon d="M5 12.5l4 4L19 7" /> Resumo pronto para o WhatsApp</li>
             </ul>
             <button type="button" className="button diagnostic-start" onClick={start}>Responder o questionário <Icon d={arrow} /></button>
           </div>
